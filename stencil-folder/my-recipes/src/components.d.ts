@@ -20,6 +20,12 @@ export namespace Components {
          */
         "middle": string;
     }
+    interface TitleTitleimage {
+        "btnText": string;
+        "imageAlt": string;
+        "imageUrl": string;
+        "pageTitle": string;
+    }
 }
 declare global {
     interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
@@ -28,8 +34,15 @@ declare global {
         prototype: HTMLMyComponentElement;
         new (): HTMLMyComponentElement;
     };
+    interface HTMLTitleTitleimageElement extends Components.TitleTitleimage, HTMLStencilElement {
+    }
+    var HTMLTitleTitleimageElement: {
+        prototype: HTMLTitleTitleimageElement;
+        new (): HTMLTitleTitleimageElement;
+    };
     interface HTMLElementTagNameMap {
         "my-component": HTMLMyComponentElement;
+        "title-titleimage": HTMLTitleTitleimageElement;
     }
 }
 declare namespace LocalJSX {
@@ -47,8 +60,15 @@ declare namespace LocalJSX {
          */
         "middle"?: string;
     }
+    interface TitleTitleimage {
+        "btnText"?: string;
+        "imageAlt"?: string;
+        "imageUrl"?: string;
+        "pageTitle"?: string;
+    }
     interface IntrinsicElements {
         "my-component": MyComponent;
+        "title-titleimage": TitleTitleimage;
     }
 }
 export { LocalJSX as JSX };
@@ -56,6 +76,7 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
+            "title-titleimage": LocalJSX.TitleTitleimage & JSXBase.HTMLAttributes<HTMLTitleTitleimageElement>;
         }
     }
 }
