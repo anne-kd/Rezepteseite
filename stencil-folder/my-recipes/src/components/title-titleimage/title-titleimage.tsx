@@ -1,4 +1,4 @@
-import { Component, ComponentInterface, Host, h, Prop } from '@stencil/core';
+import { Component, ComponentInterface, Host, h, Prop, Element, Event, EventEmitter } from '@stencil/core';
 
 @Component({
   tag: 'title-titleimage',
@@ -7,17 +7,25 @@ import { Component, ComponentInterface, Host, h, Prop } from '@stencil/core';
 })
 export class TitleTitleimage implements ComponentInterface {
 
-  @Prop() pageTitle: string;
+  // @Element() btn: HTMLElement;
+
   @Prop() imageUrl: string;
   @Prop() imageAlt: string;
   @Prop() btnText: string;
 
+  // @Event() add: EventEmitter;
+  // <button onClick={() => this.handleClick()}> {this.btnText} </button>
+
  
+  // handleClick() {
+  //   alert("hi");
+  // }
+
   render() {
     return (
       <Host>
         <div class="opener">
-          <h1> {this.pageTitle} </h1>
+          <h1> <slot></slot> </h1>
           <div class="image">
            <img src={this.imageUrl} alt={this.imageAlt} />
           </div>

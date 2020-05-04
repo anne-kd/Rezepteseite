@@ -24,7 +24,6 @@ export namespace Components {
         "btnText": string;
         "imageAlt": string;
         "imageUrl": string;
-        "pageTitle": string;
     }
 }
 declare global {
@@ -64,7 +63,6 @@ declare namespace LocalJSX {
         "btnText"?: string;
         "imageAlt"?: string;
         "imageUrl"?: string;
-        "pageTitle"?: string;
     }
     interface IntrinsicElements {
         "my-component": MyComponent;
