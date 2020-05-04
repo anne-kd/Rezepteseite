@@ -6,6 +6,8 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
+    interface AddNewRating {
+    }
     interface MyComponent {
         /**
           * The first name
@@ -25,9 +27,16 @@ export namespace Components {
         "rate": string;
     }
     interface RecipeRatings {
+        "getHeadline": () => Promise<void>;
     }
 }
 declare global {
+    interface HTMLAddNewRatingElement extends Components.AddNewRating, HTMLStencilElement {
+    }
+    var HTMLAddNewRatingElement: {
+        prototype: HTMLAddNewRatingElement;
+        new (): HTMLAddNewRatingElement;
+    };
     interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
     }
     var HTMLMyComponentElement: {
@@ -47,12 +56,16 @@ declare global {
         new (): HTMLRecipeRatingsElement;
     };
     interface HTMLElementTagNameMap {
+        "add-new-rating": HTMLAddNewRatingElement;
         "my-component": HTMLMyComponentElement;
         "my-rating": HTMLMyRatingElement;
         "recipe-ratings": HTMLRecipeRatingsElement;
     }
 }
 declare namespace LocalJSX {
+    interface AddNewRating {
+        "onButtonClick"?: (event: CustomEvent<any>) => void;
+    }
     interface MyComponent {
         /**
           * The first name
@@ -72,8 +85,10 @@ declare namespace LocalJSX {
         "rate"?: string;
     }
     interface RecipeRatings {
+        "onAdd"?: (event: CustomEvent<any>) => void;
     }
     interface IntrinsicElements {
+        "add-new-rating": AddNewRating;
         "my-component": MyComponent;
         "my-rating": MyRating;
         "recipe-ratings": RecipeRatings;
@@ -83,6 +98,7 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "add-new-rating": LocalJSX.AddNewRating & JSXBase.HTMLAttributes<HTMLAddNewRatingElement>;
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
             "my-rating": LocalJSX.MyRating & JSXBase.HTMLAttributes<HTMLMyRatingElement>;
             "recipe-ratings": LocalJSX.RecipeRatings & JSXBase.HTMLAttributes<HTMLRecipeRatingsElement>;
