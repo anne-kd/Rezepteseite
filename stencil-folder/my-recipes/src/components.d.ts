@@ -20,6 +20,10 @@ export namespace Components {
          */
         "middle": string;
     }
+    interface RecipeOverview {
+        "btnText": string;
+        "headline": string;
+    }
     interface TitleTitleimage {
         "btnText": string;
         "imageAlt": string;
@@ -33,6 +37,12 @@ declare global {
         prototype: HTMLMyComponentElement;
         new (): HTMLMyComponentElement;
     };
+    interface HTMLRecipeOverviewElement extends Components.RecipeOverview, HTMLStencilElement {
+    }
+    var HTMLRecipeOverviewElement: {
+        prototype: HTMLRecipeOverviewElement;
+        new (): HTMLRecipeOverviewElement;
+    };
     interface HTMLTitleTitleimageElement extends Components.TitleTitleimage, HTMLStencilElement {
     }
     var HTMLTitleTitleimageElement: {
@@ -41,6 +51,7 @@ declare global {
     };
     interface HTMLElementTagNameMap {
         "my-component": HTMLMyComponentElement;
+        "recipe-overview": HTMLRecipeOverviewElement;
         "title-titleimage": HTMLTitleTitleimageElement;
     }
 }
@@ -59,6 +70,10 @@ declare namespace LocalJSX {
          */
         "middle"?: string;
     }
+    interface RecipeOverview {
+        "btnText"?: string;
+        "headline"?: string;
+    }
     interface TitleTitleimage {
         "btnText"?: string;
         "imageAlt"?: string;
@@ -66,6 +81,7 @@ declare namespace LocalJSX {
     }
     interface IntrinsicElements {
         "my-component": MyComponent;
+        "recipe-overview": RecipeOverview;
         "title-titleimage": TitleTitleimage;
     }
 }
@@ -74,6 +90,7 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
+            "recipe-overview": LocalJSX.RecipeOverview & JSXBase.HTMLAttributes<HTMLRecipeOverviewElement>;
             "title-titleimage": LocalJSX.TitleTitleimage & JSXBase.HTMLAttributes<HTMLTitleTitleimageElement>;
         }
     }
