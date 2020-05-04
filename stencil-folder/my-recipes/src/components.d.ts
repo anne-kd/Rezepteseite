@@ -20,6 +20,8 @@ export namespace Components {
          */
         "middle": string;
     }
+    interface RecipeRatings {
+    }
 }
 declare global {
     interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
@@ -28,8 +30,15 @@ declare global {
         prototype: HTMLMyComponentElement;
         new (): HTMLMyComponentElement;
     };
+    interface HTMLRecipeRatingsElement extends Components.RecipeRatings, HTMLStencilElement {
+    }
+    var HTMLRecipeRatingsElement: {
+        prototype: HTMLRecipeRatingsElement;
+        new (): HTMLRecipeRatingsElement;
+    };
     interface HTMLElementTagNameMap {
         "my-component": HTMLMyComponentElement;
+        "recipe-ratings": HTMLRecipeRatingsElement;
     }
 }
 declare namespace LocalJSX {
@@ -47,8 +56,11 @@ declare namespace LocalJSX {
          */
         "middle"?: string;
     }
+    interface RecipeRatings {
+    }
     interface IntrinsicElements {
         "my-component": MyComponent;
+        "recipe-ratings": RecipeRatings;
     }
 }
 export { LocalJSX as JSX };
@@ -56,6 +68,7 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
+            "recipe-ratings": LocalJSX.RecipeRatings & JSXBase.HTMLAttributes<HTMLRecipeRatingsElement>;
         }
     }
 }
