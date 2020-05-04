@@ -12,7 +12,6 @@
 
 #addrating {
   margin-right: 0;
-  width: 96%;
   height: 10px;
   margin-top: 2%;
   background-color: #FFFAE9;
@@ -20,4 +19,35 @@
   align-items: center;
   justify-content: start;
   padding: 2%;
+}
+
+#addrating p {
+  display: block;
+  width: 95%;
+}
+
+#addbutton
+{
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+#addbutton span
+{
+    width: 40px;
+    height: 4px;
+    background-color: black;
+    border-radius: 4px;
+}
+
+#addbutton span:nth-child(1)
+{
+    transform: translateX(13px);
+}
+
+#addbutton span:nth-child(2)
+{
+    transform: rotate(90deg) translateY(12px);
 }

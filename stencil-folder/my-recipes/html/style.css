@@ -6,9 +6,10 @@ html, body {
     font-weight: 300;
 }
 
+my-rating,
 recipe-ratings {
     display: block;
-    width: 90%;
+    width: 80%;
     height: auto;
     margin: 0 auto;
 }
