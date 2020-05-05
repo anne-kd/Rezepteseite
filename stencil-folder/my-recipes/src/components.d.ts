@@ -20,6 +20,10 @@ export namespace Components {
          */
         "middle": string;
     }
+    interface MyFooter {
+    }
+    interface MySocialShare {
+    }
 }
 declare global {
     interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
@@ -28,8 +32,22 @@ declare global {
         prototype: HTMLMyComponentElement;
         new (): HTMLMyComponentElement;
     };
+    interface HTMLMyFooterElement extends Components.MyFooter, HTMLStencilElement {
+    }
+    var HTMLMyFooterElement: {
+        prototype: HTMLMyFooterElement;
+        new (): HTMLMyFooterElement;
+    };
+    interface HTMLMySocialShareElement extends Components.MySocialShare, HTMLStencilElement {
+    }
+    var HTMLMySocialShareElement: {
+        prototype: HTMLMySocialShareElement;
+        new (): HTMLMySocialShareElement;
+    };
     interface HTMLElementTagNameMap {
         "my-component": HTMLMyComponentElement;
+        "my-footer": HTMLMyFooterElement;
+        "my-social-share": HTMLMySocialShareElement;
     }
 }
 declare namespace LocalJSX {
@@ -47,8 +65,14 @@ declare namespace LocalJSX {
          */
         "middle"?: string;
     }
+    interface MyFooter {
+    }
+    interface MySocialShare {
+    }
     interface IntrinsicElements {
         "my-component": MyComponent;
+        "my-footer": MyFooter;
+        "my-social-share": MySocialShare;
     }
 }
 export { LocalJSX as JSX };
@@ -56,6 +80,8 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
+            "my-footer": LocalJSX.MyFooter & JSXBase.HTMLAttributes<HTMLMyFooterElement>;
+            "my-social-share": LocalJSX.MySocialShare & JSXBase.HTMLAttributes<HTMLMySocialShareElement>;
         }
     }
 }
