@@ -6,6 +6,8 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
+    interface ImageViewer {
+    }
     interface MyComponent {
         /**
           * The first name
@@ -32,6 +34,12 @@ export namespace Components {
     }
 }
 declare global {
+    interface HTMLImageViewerElement extends Components.ImageViewer, HTMLStencilElement {
+    }
+    var HTMLImageViewerElement: {
+        prototype: HTMLImageViewerElement;
+        new (): HTMLImageViewerElement;
+    };
     interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
     }
     var HTMLMyComponentElement: {
@@ -51,12 +59,15 @@ declare global {
         new (): HTMLTitleTitleimageElement;
     };
     interface HTMLElementTagNameMap {
+        "image-viewer": HTMLImageViewerElement;
         "my-component": HTMLMyComponentElement;
         "recipe-overview": HTMLRecipeOverviewElement;
         "title-titleimage": HTMLTitleTitleimageElement;
     }
 }
 declare namespace LocalJSX {
+    interface ImageViewer {
+    }
     interface MyComponent {
         /**
           * The first name
@@ -82,6 +93,7 @@ declare namespace LocalJSX {
         "imageUrl"?: string;
     }
     interface IntrinsicElements {
+        "image-viewer": ImageViewer;
         "my-component": MyComponent;
         "recipe-overview": RecipeOverview;
         "title-titleimage": TitleTitleimage;
@@ -91,6 +103,7 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "image-viewer": LocalJSX.ImageViewer & JSXBase.HTMLAttributes<HTMLImageViewerElement>;
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
             "recipe-overview": LocalJSX.RecipeOverview & JSXBase.HTMLAttributes<HTMLRecipeOverviewElement>;
             "title-titleimage": LocalJSX.TitleTitleimage & JSXBase.HTMLAttributes<HTMLTitleTitleimageElement>;
