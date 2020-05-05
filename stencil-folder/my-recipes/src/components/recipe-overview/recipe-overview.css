@@ -5,10 +5,12 @@
 }
 
 .generalRecipe {
-  z-index: 2;
+  z-index: 1;
   font-family: 'Montserrat', sans-serif;
   padding: 20px 70px;
   width: 340px;
+  position: relative;
+  
 }
 
 h2 {

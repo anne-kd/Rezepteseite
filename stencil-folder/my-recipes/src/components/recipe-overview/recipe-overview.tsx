@@ -1,5 +1,5 @@
-import { h } from '@stencil/core';
-import { Component, ComponentInterface, Host, Prop } from '@stencil/core';
+import { Component, ComponentInterface, Host, Prop, h } from '@stencil/core';
+
 @Component({
   tag: 'recipe-overview',
   styleUrl: 'recipe-overview.css',

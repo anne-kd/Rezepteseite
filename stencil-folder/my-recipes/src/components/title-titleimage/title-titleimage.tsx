@@ -30,10 +30,10 @@ export class TitleTitleimage implements ComponentInterface {
       <Host>
         <div class="opener">
           <h1> <slot></slot> </h1>
+          {this.btnVisible ? <button> {this.btnText} </button> : <br></br>}
           <div class="image">
             <img src={this.imageUrl} alt={this.imageAlt} />
           </div>
-            {this.btnVisible ? <button> {this.btnText} </button> : <br></br>}
         </div>
       </Host>
     );
