@@ -71,5 +71,4 @@ Instead, use a prefix that fits your company or any name for a group of related 
 - Add an import to the npm packages `import my-component;`
 - Then you can use the element anywhere in your template, JSX, html etc
 
-### in options add
-"javascript.implicitProjectConfig.experimentalDecorators": true
+

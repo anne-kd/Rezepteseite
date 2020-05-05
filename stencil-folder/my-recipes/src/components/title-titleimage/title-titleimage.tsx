@@ -1,4 +1,4 @@
-import { Component, ComponentInterface, Host, h, Prop} from '@stencil/core';
+import { Component, ComponentInterface, Host, h, Prop } from '@stencil/core';
 
 @Component({
   tag: 'title-titleimage',
@@ -14,13 +14,13 @@ export class TitleTitleimage implements ComponentInterface {
   @Prop() imageAlt: string;
   @Prop() btnText: string;
 
-  // @Prop() btnVisible: false;
+  @Prop() btnVisible: boolean;
   //später Button optional machen
 
   // @Event() add: EventEmitter;
   // <button onClick={() => this.handleClick()}> {this.btnText} </button>
 
- 
+
   // handleClick() {
   //   alert("hi");
   // }
@@ -31,9 +31,9 @@ export class TitleTitleimage implements ComponentInterface {
         <div class="opener">
           <h1> <slot></slot> </h1>
           <div class="image">
-           <img src={this.imageUrl} alt={this.imageAlt} />
+            <img src={this.imageUrl} alt={this.imageAlt} />
           </div>
-          <button> {this.btnText} </button>
+            {this.btnVisible ? <button> {this.btnText} </button> : <br></br>}
         </div>
       </Host>
     );

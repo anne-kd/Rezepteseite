@@ -26,6 +26,7 @@ export namespace Components {
     }
     interface TitleTitleimage {
         "btnText": string;
+        "btnVisible": boolean;
         "imageAlt": string;
         "imageUrl": string;
     }
@@ -76,6 +77,7 @@ declare namespace LocalJSX {
     }
     interface TitleTitleimage {
         "btnText"?: string;
+        "btnVisible"?: boolean;
         "imageAlt"?: string;
         "imageUrl"?: string;
     }
