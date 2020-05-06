@@ -1,5 +1,6 @@
 import { Component, ComponentInterface, Host, h, Prop } from '@stencil/core';
 
+//this component creates the main opener for he website; a big title image with a headline and an optional clickable button
 @Component({
   tag: 'title-titleimage',
   styleUrl: 'title-titleimage.css',
@@ -7,18 +8,15 @@ import { Component, ComponentInterface, Host, h, Prop } from '@stencil/core';
 })
 export class TitleTitleimage implements ComponentInterface {
 
-  // @Element() btn: HTMLElement;
-  ////import EventEmitter, Event, Element
-
   @Prop() imageUrl: string;
   @Prop() imageAlt: string;
   @Prop() btnText: string;
   @Prop() btnGoalUrl: string;
+  //not everybody needs a button in the opener; on default the button is not there, as long as it is explicitly wanted (value=true)
   @Prop() btnVisible: boolean = false;
   
- 
-  // @Event() add: EventEmitter;
   
+  //redirects the user on button click
   handleClick(btnUrl: string) {
     window.location.href = btnUrl;   
   }

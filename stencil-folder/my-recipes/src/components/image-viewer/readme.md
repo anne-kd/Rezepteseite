@@ -7,9 +7,11 @@
 
 ## Properties
 
-| Property | Attribute | Description | Type     | Default     |
-| -------- | --------- | ----------- | -------- | ----------- |
-| `imgUrl` | `img-url` |             | `string` | `undefined` |
+| Property   | Attribute   | Description | Type     | Default     |
+| ---------- | ----------- | ----------- | -------- | ----------- |
+| `imgAlt`   | `img-alt`   |             | `string` | `undefined` |
+| `imgUrl`   | `img-url`   |             | `string` | `undefined` |
+| `imgWidth` | `img-width` |             | `string` | `undefined` |
 
 
 ----------------------------------------------
