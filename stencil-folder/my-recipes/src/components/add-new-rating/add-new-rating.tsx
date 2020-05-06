@@ -15,7 +15,7 @@ export class AddNewRating implements ComponentInterface {
   hidePopup(){
     let popup = document.querySelector("add-new-rating");
     popup.classList.remove("display");
-    console.log(this.ratingTitle);
+    console.log(this.ratingTitle, this.ratingText);
   }
 
   titleInput(e: UIEvent){
@@ -23,8 +23,8 @@ export class AddNewRating implements ComponentInterface {
     this.ratingTitle = inputT.value;
   }
   
-  ratingInput(e: UIEvent){
-    const inputR = e.target as HTMLInputElement;
+  ratingInput(elem: UIEvent){
+    const inputR = elem.target as HTMLInputElement;
     this.ratingText = inputR.value;
   }
 
@@ -36,7 +36,7 @@ export class AddNewRating implements ComponentInterface {
           <label htmlFor="title"> Titel </label>
             <input type="text" name="title" id="title" onInput={(event: UIEvent)=>{this.titleInput(event)}}/>
           <label htmlFor="rating"> Beschreibung </label>
-            <input type="text" name="rating" id="rating" onInput={(event: UIEvent)=>{this.titleInput(event)}}/>
+            <input type="text" name="rating" id="rating" onInput={(event: UIEvent)=>{this.ratingInput(event)}}/>
           <button id="ok" onClick={()=>{this.buttonClick.emit()}}>OK</button>
           <button id="cancel" onClick={()=>{this.buttonClick.emit()}}>Abbrechen</button>
         </div>
