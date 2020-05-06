@@ -14,8 +14,8 @@ h2 {
 
 .imgSize {
   margin: 25px 8px;
-  /* width: 180px; */
-  height: 220px; 
+  width: 180px;
+  height: 210px; 
   position: relative;
   overflow: hidden;
   border-radius: 6px;

@@ -6,20 +6,21 @@ import { Component, ComponentInterface, Host, h, Prop } from '@stencil/core';
   shadow: true,
 })
 export class ImageViewer implements ComponentInterface {
-  // @Prop() imgCount: number;
   @Prop() imgUrl: string;
   @Prop() imgAlt: string;
   @Prop() imgWidth: string;
 
-  setImgWidth(){
-  
-  }
-
+ 
   render() {
+
+    const imgStyle = {
+      width: this.imgWidth
+    }
+
     return (
       <Host>
         <h2> <slot></slot> </h2>
-        <div class="imgSize">
+        <div style={imgStyle} class="imgSize">
           <img src={this.imgUrl} alt={this.imgAlt} />   
         </div>
       </Host>
