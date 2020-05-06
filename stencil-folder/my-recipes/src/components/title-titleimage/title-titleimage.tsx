@@ -13,24 +13,22 @@ export class TitleTitleimage implements ComponentInterface {
   @Prop() imageUrl: string;
   @Prop() imageAlt: string;
   @Prop() btnText: string;
-
+  @Prop() btnGoalUrl: string;
   @Prop() btnVisible: boolean;
-  //später Button optional machen
-
+ 
   // @Event() add: EventEmitter;
-  // <button onClick={() => this.handleClick()}> {this.btnText} </button>
-
-
-  // handleClick() {
-  //   alert("hi");
-  // }
+  
+  handleClick(btnUrl: string) {
+    window.location.href = btnUrl;
+    
+  }
 
   render() {
     return (
       <Host>
         <div class="opener">
           <h1> <slot></slot> </h1>
-          {this.btnVisible ? <button> {this.btnText} </button> : <br></br>}
+          {this.btnVisible ? <button onClick={() => this.handleClick(this.btnGoalUrl)}> {this.btnText} </button> : <br></br>}
           <div class="image">
             <img src={this.imageUrl} alt={this.imageAlt} />
           </div>

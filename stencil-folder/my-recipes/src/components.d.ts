@@ -7,6 +7,8 @@
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
     interface ImageViewer {
+        "imgUrl1": string;
+        "imgUrl2": string;
     }
     interface MyComponent {
         /**
@@ -27,6 +29,7 @@ export namespace Components {
         "headline": string;
     }
     interface TitleTitleimage {
+        "btnGoalUrl": string;
         "btnText": string;
         "btnVisible": boolean;
         "imageAlt": string;
@@ -67,6 +70,8 @@ declare global {
 }
 declare namespace LocalJSX {
     interface ImageViewer {
+        "imgUrl1"?: string;
+        "imgUrl2"?: string;
     }
     interface MyComponent {
         /**
@@ -87,6 +92,7 @@ declare namespace LocalJSX {
         "headline"?: string;
     }
     interface TitleTitleimage {
+        "btnGoalUrl"?: string;
         "btnText"?: string;
         "btnVisible"?: boolean;
         "imageAlt"?: string;
