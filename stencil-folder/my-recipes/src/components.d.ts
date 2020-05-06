@@ -27,7 +27,6 @@ export namespace Components {
         "rate": string;
     }
     interface RecipeRatings {
-        "getHeadline": () => Promise<void>;
     }
 }
 declare global {

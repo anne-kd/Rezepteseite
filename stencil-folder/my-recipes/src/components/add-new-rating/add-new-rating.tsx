@@ -22,6 +22,7 @@ export class AddNewRating implements ComponentInterface {
     const inputT = e.target as HTMLInputElement;
     this.ratingTitle = inputT.value;
   }
+  
   ratingInput(e: UIEvent){
     const inputR = e.target as HTMLInputElement;
     this.ratingText = inputR.value;

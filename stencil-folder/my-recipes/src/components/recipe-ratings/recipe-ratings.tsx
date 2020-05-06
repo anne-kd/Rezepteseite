@@ -1,4 +1,4 @@
-import { Component, ComponentInterface, Host, h, Event, EventEmitter, Listen, Method } from '@stencil/core';
+import { Component, ComponentInterface, Host, h, Event, EventEmitter, Listen, State } from '@stencil/core';
 
 @Component({
   tag: 'recipe-ratings',
@@ -6,21 +6,20 @@ import { Component, ComponentInterface, Host, h, Event, EventEmitter, Listen, Me
   shadow: true,
 })
 export class RecipeRatings implements ComponentInterface {
-
-  @Method()
-  getHeadline(){
-
-  }
-
+  @State() ratingBox!: HTMLElement;
+  
   @Event() add: EventEmitter;
   @Listen("add")
   addRating(){
-
+    let html = `<my-rating headline="Hello" rate="World"></my-rating>`;
+    this.ratingBox.insertAdjacentHTML('afterend', html);
   }
 
-  addNewRating(){
-    let popup = document.querySelector("add-new-rating");
+  showPopup(){
+    let popup = document.querySelector("add-new-rating") as HTMLElement;
     popup.classList.add("display");
+
+    this.add.emit();
   }
 
   render() {
@@ -29,11 +28,12 @@ export class RecipeRatings implements ComponentInterface {
         <div class="headline" >
           <slot></slot> 
         </div>
-
-        <my-rating headline="Nice Recipe!" rate="Well done!"></my-rating>
-        <my-rating headline="Not good at all" rate="I tried that recepie several times but ist was just not good"></my-rating>
-
-        <div id="addrating" onClick={() => {this.addNewRating()}}>
+        <div ref={(el)=> this.ratingBox = el as HTMLElement}>
+          <my-rating headline="Nice Recipe!" rate="Well done!"></my-rating>
+          <my-rating headline="Not good at all" rate="I tried that recepie several times but ist was just not good"></my-rating>
+        </div>
+      
+        <div id="addrating" onClick={() => {this.showPopup()}}>
           <p>Neue Bewertung hinzufügen</p>
           <div id="addbutton">
             <span></span>
