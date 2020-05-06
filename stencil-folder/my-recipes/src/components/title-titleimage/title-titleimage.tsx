@@ -14,13 +14,13 @@ export class TitleTitleimage implements ComponentInterface {
   @Prop() imageAlt: string;
   @Prop() btnText: string;
   @Prop() btnGoalUrl: string;
-  @Prop() btnVisible: boolean;
+  @Prop() btnVisible: boolean = false;
+  
  
   // @Event() add: EventEmitter;
   
   handleClick(btnUrl: string) {
-    window.location.href = btnUrl;
-    
+    window.location.href = btnUrl;   
   }
 
   render() {

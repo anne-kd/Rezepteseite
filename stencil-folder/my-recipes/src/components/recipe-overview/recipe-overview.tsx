@@ -8,7 +8,13 @@ import { Component, ComponentInterface, Host, Prop, h } from '@stencil/core';
 export class RecipeOverview implements ComponentInterface {
 
 @Prop() btnText: string;
+@Prop() btnGoalUrl: string;
 @Prop() headline: string;
+
+handleClick(btnUrl: string) {
+  window.location.href = btnUrl;
+  
+}
 
   render() {
     return (<Host>
@@ -16,8 +22,7 @@ export class RecipeOverview implements ComponentInterface {
          <h2> {this.headline} </h2>
          <hr class="line"></hr>
          <p> <slot></slot> </p>
-         <button> {this.btnText} </button>
-
+         <button onClick={() => this.handleClick(this.btnGoalUrl)}> {this.btnText} </button>
       </div>
     </Host>);
   }

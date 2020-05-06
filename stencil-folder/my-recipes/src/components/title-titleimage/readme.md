@@ -7,11 +7,13 @@
 
 ## Properties
 
-| Property   | Attribute   | Description | Type     | Default     |
-| ---------- | ----------- | ----------- | -------- | ----------- |
-| `btnText`  | `btn-text`  |             | `string` | `undefined` |
-| `imageAlt` | `image-alt` |             | `string` | `undefined` |
-| `imageUrl` | `image-url` |             | `string` | `undefined` |
+| Property     | Attribute      | Description | Type      | Default     |
+| ------------ | -------------- | ----------- | --------- | ----------- |
+| `btnGoalUrl` | `btn-goal-url` |             | `string`  | `undefined` |
+| `btnText`    | `btn-text`     |             | `string`  | `undefined` |
+| `btnVisible` | `btn-visible`  |             | `boolean` | `false`     |
+| `imageAlt`   | `image-alt`    |             | `string`  | `undefined` |
+| `imageUrl`   | `image-url`    |             | `string`  | `undefined` |
 
 
 ----------------------------------------------

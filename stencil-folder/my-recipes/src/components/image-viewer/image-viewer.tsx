@@ -6,23 +6,23 @@ import { Component, ComponentInterface, Host, h, Prop } from '@stencil/core';
   shadow: true,
 })
 export class ImageViewer implements ComponentInterface {
-  @Prop() imgUrl1: string;
-  @Prop() imgUrl2: string;
+  // @Prop() imgCount: number;
+  @Prop() imgUrl: string;
+  @Prop() imgAlt: string;
+  @Prop() imgWidth: string;
 
-
-  //for each/ zahl eingeben lassen machen, man kann zahl eingeben, wieviel bilder eingefüg werden sollen
+  setImgWidth(){
+  
+  }
 
   render() {
     return (
       <Host>
-        <div class="imgWrapper">
-          <div></div>
-          <img src={this.imgUrl1} alt="" />
-          <img src={this.imgUrl2} alt="" />
-          <img src="" alt="add more" />
+        <h2> <slot></slot> </h2>
+        <div class="imgSize">
+          <img src={this.imgUrl} alt={this.imgAlt} />   
         </div>
       </Host>
     );
   }
-
 }
