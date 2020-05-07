@@ -1,0 +1,9 @@
+:host {
+  display: block;
+}
+.kek{
+  color: black;
+  display: inline;
+  font-weight: bold;
+  margin-left: 20px;
+}

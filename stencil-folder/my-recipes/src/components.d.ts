@@ -6,6 +6,9 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
+    interface ListMultiplicator {
+        "multiplicator": number;
+    }
     interface MyComponent {
         /**
           * The first name
@@ -20,19 +23,41 @@ export namespace Components {
          */
         "middle": string;
     }
+    interface SidebarListItem {
+        "kind": string;
+        "unit": string;
+        "value": number;
+    }
 }
 declare global {
+    interface HTMLListMultiplicatorElement extends Components.ListMultiplicator, HTMLStencilElement {
+    }
+    var HTMLListMultiplicatorElement: {
+        prototype: HTMLListMultiplicatorElement;
+        new (): HTMLListMultiplicatorElement;
+    };
     interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
     }
     var HTMLMyComponentElement: {
         prototype: HTMLMyComponentElement;
         new (): HTMLMyComponentElement;
     };
+    interface HTMLSidebarListItemElement extends Components.SidebarListItem, HTMLStencilElement {
+    }
+    var HTMLSidebarListItemElement: {
+        prototype: HTMLSidebarListItemElement;
+        new (): HTMLSidebarListItemElement;
+    };
     interface HTMLElementTagNameMap {
+        "list-multiplicator": HTMLListMultiplicatorElement;
         "my-component": HTMLMyComponentElement;
+        "sidebar-list-item": HTMLSidebarListItemElement;
     }
 }
 declare namespace LocalJSX {
+    interface ListMultiplicator {
+        "multiplicator"?: number;
+    }
     interface MyComponent {
         /**
           * The first name
@@ -47,15 +72,24 @@ declare namespace LocalJSX {
          */
         "middle"?: string;
     }
+    interface SidebarListItem {
+        "kind"?: string;
+        "unit"?: string;
+        "value"?: number;
+    }
     interface IntrinsicElements {
+        "list-multiplicator": ListMultiplicator;
         "my-component": MyComponent;
+        "sidebar-list-item": SidebarListItem;
     }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "list-multiplicator": LocalJSX.ListMultiplicator & JSXBase.HTMLAttributes<HTMLListMultiplicatorElement>;
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
+            "sidebar-list-item": LocalJSX.SidebarListItem & JSXBase.HTMLAttributes<HTMLSidebarListItemElement>;
         }
     }
 }
