@@ -9,6 +9,14 @@ export namespace Components {
     interface ListMultiplicator {
         "multiplicator": number;
     }
+    interface MenuItem {
+        "hover1": string;
+        "hover2": string;
+        "hover3": string;
+        "hover4": string;
+        "link": string;
+        "name": string;
+    }
     interface MyComponent {
         /**
           * The first name
@@ -23,6 +31,15 @@ export namespace Components {
          */
         "middle": string;
     }
+    interface RecipePage {
+        "five": string;
+        "four": string;
+        "image": string;
+        "one": string;
+        "three": string;
+        "title": string;
+        "two": string;
+    }
     interface SidebarListItem {
         "kind": string;
         "unit": string;
@@ -36,11 +53,23 @@ declare global {
         prototype: HTMLListMultiplicatorElement;
         new (): HTMLListMultiplicatorElement;
     };
+    interface HTMLMenuItemElement extends Components.MenuItem, HTMLStencilElement {
+    }
+    var HTMLMenuItemElement: {
+        prototype: HTMLMenuItemElement;
+        new (): HTMLMenuItemElement;
+    };
     interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
     }
     var HTMLMyComponentElement: {
         prototype: HTMLMyComponentElement;
         new (): HTMLMyComponentElement;
+    };
+    interface HTMLRecipePageElement extends Components.RecipePage, HTMLStencilElement {
+    }
+    var HTMLRecipePageElement: {
+        prototype: HTMLRecipePageElement;
+        new (): HTMLRecipePageElement;
     };
     interface HTMLSidebarListItemElement extends Components.SidebarListItem, HTMLStencilElement {
     }
@@ -50,13 +79,23 @@ declare global {
     };
     interface HTMLElementTagNameMap {
         "list-multiplicator": HTMLListMultiplicatorElement;
+        "menu-item": HTMLMenuItemElement;
         "my-component": HTMLMyComponentElement;
+        "recipe-page": HTMLRecipePageElement;
         "sidebar-list-item": HTMLSidebarListItemElement;
     }
 }
 declare namespace LocalJSX {
     interface ListMultiplicator {
         "multiplicator"?: number;
+    }
+    interface MenuItem {
+        "hover1"?: string;
+        "hover2"?: string;
+        "hover3"?: string;
+        "hover4"?: string;
+        "link"?: string;
+        "name"?: string;
     }
     interface MyComponent {
         /**
@@ -72,6 +111,15 @@ declare namespace LocalJSX {
          */
         "middle"?: string;
     }
+    interface RecipePage {
+        "five"?: string;
+        "four"?: string;
+        "image"?: string;
+        "one"?: string;
+        "three"?: string;
+        "title"?: string;
+        "two"?: string;
+    }
     interface SidebarListItem {
         "kind"?: string;
         "unit"?: string;
@@ -79,7 +127,9 @@ declare namespace LocalJSX {
     }
     interface IntrinsicElements {
         "list-multiplicator": ListMultiplicator;
+        "menu-item": MenuItem;
         "my-component": MyComponent;
+        "recipe-page": RecipePage;
         "sidebar-list-item": SidebarListItem;
     }
 }
@@ -88,7 +138,9 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "list-multiplicator": LocalJSX.ListMultiplicator & JSXBase.HTMLAttributes<HTMLListMultiplicatorElement>;
+            "menu-item": LocalJSX.MenuItem & JSXBase.HTMLAttributes<HTMLMenuItemElement>;
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
+            "recipe-page": LocalJSX.RecipePage & JSXBase.HTMLAttributes<HTMLRecipePageElement>;
             "sidebar-list-item": LocalJSX.SidebarListItem & JSXBase.HTMLAttributes<HTMLSidebarListItemElement>;
         }
     }

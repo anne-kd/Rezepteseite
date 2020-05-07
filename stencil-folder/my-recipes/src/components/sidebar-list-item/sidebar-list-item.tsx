@@ -36,7 +36,7 @@ export class SidebarListItem implements ComponentInterface {
 
 
       render() {
-        return <div> {this.getKind()}<div class={'kek'}>{this.getValue()}{this.getUnit()}</div></div>;
+        return <div> <div class={'kind'}> {this.getKind()}</div><div class={'kek'}>{this.getValue()} {this.getUnit()}</div></div>;
     }
 
 
