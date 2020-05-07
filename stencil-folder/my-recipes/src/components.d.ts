@@ -63,7 +63,10 @@ declare global {
 }
 declare namespace LocalJSX {
     interface AddNewRating {
-        "onButtonClick"?: (event: CustomEvent<any>) => void;
+        "onButtonClickCancel"?: (event: CustomEvent<any>) => void;
+        "onButtonClickOK"?: (event: CustomEvent<any>) => void;
+        "onTextChanged"?: (event: CustomEvent<string>) => void;
+        "onTitleChanged"?: (event: CustomEvent<string>) => void;
     }
     interface MyComponent {
         /**

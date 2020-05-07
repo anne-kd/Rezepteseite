@@ -7,19 +7,23 @@ import { Component, ComponentInterface, Host, h, Event, EventEmitter, Listen, St
 })
 export class RecipeRatings implements ComponentInterface {
   @State() ratingBox!: HTMLElement;
+  @State() ratingPopup!: HTMLElement;
+  @State() titleValue: string;
+  @State() ratingValue: string;
   
   @Event() add: EventEmitter;
   @Listen("add")
   addRating(){
-    let html = `<my-rating headline="Hello" rate="World"></my-rating>`;
+    this.closePopup();
+    let html = `<my-rating headline="${this.titleValue}" rate="${this.ratingValue}"></my-rating>`;
     this.ratingBox.insertAdjacentHTML('afterend', html);
   }
 
   showPopup(){
-    let popup = document.querySelector("add-new-rating") as HTMLElement;
-    popup.classList.add("display");
-
-    this.add.emit();
+    this.ratingPopup.classList.add("display");
+  }
+  closePopup(){
+    this.ratingPopup.classList.remove("display");
   }
 
   render() {
@@ -28,6 +32,13 @@ export class RecipeRatings implements ComponentInterface {
         <div class="headline" >
           <slot></slot> 
         </div>
+        <add-new-rating class="" 
+          ref={(el)=> this.ratingPopup = el as HTMLElement}
+          onTitleChanged = {(e: CustomEvent) => this.titleValue = e.detail}
+          onTextChanged = {(e: CustomEvent) => this.ratingValue = e.detail}
+          onButtonClickOK = {(e:CustomEvent)=> this.add.emit()}
+          onButtonClickCancel = {(e:CustomEvent)=> this.closePopup()}
+        ></add-new-rating>
         <div ref={(el)=> this.ratingBox = el as HTMLElement}>
           <my-rating headline="Nice Recipe!" rate="Well done!"></my-rating>
           <my-rating headline="Not good at all" rate="I tried that recepie several times but ist was just not good"></my-rating>

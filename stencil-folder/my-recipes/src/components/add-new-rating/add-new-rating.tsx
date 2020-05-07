@@ -1,4 +1,4 @@
-import { Component, ComponentInterface, Host, h, Event, EventEmitter, Listen, State } from '@stencil/core';
+import { Component, ComponentInterface, Host, h, Event, EventEmitter, State } from '@stencil/core';
 
 
 @Component({
@@ -7,25 +7,33 @@ import { Component, ComponentInterface, Host, h, Event, EventEmitter, Listen, St
   shadow: true,
 })
 export class AddNewRating implements ComponentInterface {
-  @State() ratingTitle: string
-  @State() ratingText: string
-  @Event() buttonClick: EventEmitter
+  @State() textInput : HTMLElement;
+  @State() titleInput : HTMLElement;
 
-  @Listen("buttonClick")
-  hidePopup(){
-    let popup = document.querySelector("add-new-rating");
-    popup.classList.remove("display");
-    console.log(this.ratingTitle, this.ratingText);
+  @Event() buttonClickOK: EventEmitter;
+  @Event() buttonClickCancel: EventEmitter;
+  @Event() titleChanged: EventEmitter<string>;
+  @Event() textChanged: EventEmitter<string>;
+
+  changeTitle(e: UIEvent) {
+    const input = e.target as HTMLInputElement;
+    this.titleChanged.emit(input.value);
   }
 
-  titleInput(e: UIEvent){
-    const inputT = e.target as HTMLInputElement;
-    this.ratingTitle = inputT.value;
+  changeText(e: UIEvent) {
+    const input = e.target as HTMLInputElement;
+    this.textChanged.emit(input.value);
   }
   
-  ratingInput(elem: UIEvent){
-    const inputR = elem.target as HTMLInputElement;
-    this.ratingText = inputR.value;
+  send(){
+    this.buttonClickOK.emit();
+    this.textInput.innerText = "";
+    this.titleInput.innerText = "";
+  }
+  delete(){
+    this.buttonClickCancel.emit();
+    this.textInput.innerText = "";
+    this.titleInput.innerText = "";
   }
 
   render() {
@@ -34,11 +42,17 @@ export class AddNewRating implements ComponentInterface {
         <div id="popup">
           <h3>Neue Bewertung hinzufügen</h3>
           <label htmlFor="title"> Titel </label>
-            <input type="text" name="title" id="title" onInput={(event: UIEvent)=>{this.titleInput(event)}}/>
+            <input type="text" name="title" id="title" 
+              onInput={(e: UIEvent) => this.changeTitle(e)}
+              ref={(el)=> this.titleInput = el as HTMLElement}
+            />
           <label htmlFor="rating"> Beschreibung </label>
-            <input type="text" name="rating" id="rating" onInput={(event: UIEvent)=>{this.ratingInput(event)}}/>
-          <button id="ok" onClick={()=>{this.buttonClick.emit()}}>OK</button>
-          <button id="cancel" onClick={()=>{this.buttonClick.emit()}}>Abbrechen</button>
+            <input type="text" name="rating" id="rating" 
+              onInput={(e: UIEvent) => this.changeText(e)}
+              ref={(el)=> this.textInput = el as HTMLElement}
+            />
+          <button id="ok" onClick = {(e: UIEvent) => this.send()}>OK</button>
+          <button id="cancel" onClick = {(e: UIEvent) => this.delete()}>Abbrechen</button>
         </div>
       </Host>
     );
