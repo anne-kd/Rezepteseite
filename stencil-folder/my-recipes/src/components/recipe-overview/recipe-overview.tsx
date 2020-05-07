@@ -22,7 +22,7 @@ handleClick(btnUrl: string) {
     return (<Host>
       <div class="generalRecipe">
          <h2> {this.headline} </h2>
-         {/* for optcal reasons */}
+         {/* for optical reasons */}
          <hr class="line"></hr>
          <p> <slot></slot> </p>
          <button onClick={() => this.handleClick(this.btnGoalUrl)}> {this.btnText} </button>
