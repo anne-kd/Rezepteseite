@@ -1,3 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&display=swap');
+
 :host {
-  display: block;
+  display: inline-block;
+}
+
+h2 {
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 15px;
+  margin-top: 10%;
+}
+
+.imgSize {
+  margin-right: 25px;
+  width: 180px;
+  height: 210px; 
+  position: relative;
+  overflow: hidden;
+  border-radius: 6px;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  padding: 0;
+  border-radius: 6px;
 }

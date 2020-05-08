@@ -5,7 +5,7 @@ html, body {
     font-family: 'Montserrat', sans-serif;
     font-weight: 300;
 }
-image-viewer, 
+#impressions,
 my-rating,
 recipe-ratings {
     display: block;
