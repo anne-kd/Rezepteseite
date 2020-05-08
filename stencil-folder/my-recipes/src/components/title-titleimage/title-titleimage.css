@@ -5,6 +5,7 @@
 }
 
 .opener {
+  display: flex;
   font-family: 'Montserrat', sans-serif;
 }
 

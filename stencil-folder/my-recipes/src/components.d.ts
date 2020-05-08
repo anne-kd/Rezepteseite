@@ -31,12 +31,14 @@ export namespace Components {
     interface MySocialShare {
     }
     interface RecipeOverview {
+        "btnGoalUrl": string;
         "btnText": string;
         "headline": string;
     }
     interface RecipeRatings {
     }
     interface TitleTitleimage {
+        "btnGoalUrl": string;
         "btnText": string;
         "btnVisible": boolean;
         "imageAlt": string;
@@ -133,6 +135,7 @@ declare namespace LocalJSX {
     interface MySocialShare {
     }
     interface RecipeOverview {
+        "btnGoalUrl"?: string;
         "btnText"?: string;
         "headline"?: string;
     }
@@ -140,6 +143,7 @@ declare namespace LocalJSX {
         "onAdd"?: (event: CustomEvent<any>) => void;
     }
     interface TitleTitleimage {
+        "btnGoalUrl"?: string;
         "btnText"?: string;
         "btnVisible"?: boolean;
         "imageAlt"?: string;

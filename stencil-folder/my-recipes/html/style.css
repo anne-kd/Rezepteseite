@@ -5,7 +5,7 @@ html, body {
     font-family: 'Montserrat', sans-serif;
     font-weight: 300;
 }
-
+image-viewer, 
 my-rating,
 recipe-ratings {
     display: block;
@@ -19,9 +19,9 @@ my-footer{
     margin: 0 auto;
     margin-top: 5%;
 }
+
 title-titleimage {
     height: 100vh;
-
 }
 recipe-overview {
     display: block;
