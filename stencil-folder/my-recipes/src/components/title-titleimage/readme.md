@@ -1,4 +1,4 @@
-# image-viewer
+# title-titleimage
 
 
 
@@ -9,9 +9,9 @@
 
 | Property   | Attribute   | Description | Type     | Default     |
 | ---------- | ----------- | ----------- | -------- | ----------- |
-| `imgAlt`   | `img-alt`   |             | `string` | `undefined` |
-| `imgUrl`   | `img-url`   |             | `string` | `undefined` |
-| `imgWidth` | `img-width` |             | `string` | `undefined` |
+| `btnText`  | `btn-text`  |             | `string` | `undefined` |
+| `imageAlt` | `image-alt` |             | `string` | `undefined` |
+| `imageUrl` | `image-url` |             | `string` | `undefined` |
 
 
 ----------------------------------------------
