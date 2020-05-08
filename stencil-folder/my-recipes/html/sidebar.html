@@ -1,26 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>sidebar test</title>
-  <script src="../dist/my-recipes.js"></script>
-</head>
-<body>
-<div class="sidebar">
-  <h2>Mitspeisende</h2>
-  <list-multiplicator multiplicator='10'></list-multiplicator>
-  <h2>Zutaten</h2>
-
-  <sidebar-list-item kind = 'Wasser' value="800" unit="ml"></sidebar-list-item>
-  <sidebar-list-item kind = 'Zitronen' value="1" ></sidebar-list-item>
-  <sidebar-list-item kind = 'Ingwer' value="1" unit="hälfte"></sidebar-list-item>
-  <sidebar-list-item kind = 'Zucker' value="50" unit="g"></sidebar-list-item>
-  <sidebar-list-item kind = 'Honig' value="1" unit="el"></sidebar-list-item>
-  <sidebar-list-item kind = 'Wasser' value="800" unit="ml"></sidebar-list-item>
-  <p id="multi">1001</p>
-</div>
-<recipe-page title="leel" image="luul.img" one="fghsjshbchd" two="bccdjbcjbhdhj chhdcuhuidhcu h"></recipe-page>
-
-
-</body>
+    <script src="../dist/my-recipes.js"></script>
+  </head>
+  <body>
+    <div class="sidebar">
+      <recipe-ingredients multiplicator="4">
+        <sidebar-list-item
+          kind="Wasser"
+          unit-value="50"
+          unit="ml"
+        ></sidebar-list-item>
+        <sidebar-list-item kind="Zitronen" unit-value="1"></sidebar-list-item>
+        <sidebar-list-item
+          kind="Ingwer"
+          unit-value="1"
+          unit="hälfte"
+        ></sidebar-list-item>
+        <sidebar-list-item
+          kind="Zucker"
+          unit-value="50"
+          unit="g"
+        ></sidebar-list-item>
+        <sidebar-list-item
+          kind="Honig"
+          unit-value="1"
+          unit="el"
+        ></sidebar-list-item>
+        <sidebar-list-item
+          kind="Wasser"
+          unit-value="800"
+          unit="ml"
+        ></sidebar-list-item>
+        -->
+      </recipe-ingredients>
+    </div>
+    <recipe-page
+      title="leel"
+      image="luul.img"
+      one="fghsjshbchd"
+      two="bccdjbcjbhdhj chhdcuhuidhcu h"
+    ></recipe-page>
+  </body>
 </html>

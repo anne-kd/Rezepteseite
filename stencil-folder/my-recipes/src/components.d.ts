@@ -9,14 +9,6 @@ export namespace Components {
     interface ListMultiplicator {
         "multiplicator": number;
     }
-    interface MenuItem {
-        "hover1": string;
-        "hover2": string;
-        "hover3": string;
-        "hover4": string;
-        "link": string;
-        "name": string;
-    }
     interface MyComponent {
         /**
           * The first name
@@ -31,6 +23,9 @@ export namespace Components {
          */
         "middle": string;
     }
+    interface RecipeIngredients {
+        "multiplicator": number;
+    }
     interface RecipePage {
         "five": string;
         "four": string;
@@ -42,8 +37,9 @@ export namespace Components {
     }
     interface SidebarListItem {
         "kind": string;
+        "setMultiplicator": (m: number) => Promise<void>;
         "unit": string;
-        "value": number;
+        "unitValue": number;
     }
     interface TopNav {
     }
@@ -55,17 +51,17 @@ declare global {
         prototype: HTMLListMultiplicatorElement;
         new (): HTMLListMultiplicatorElement;
     };
-    interface HTMLMenuItemElement extends Components.MenuItem, HTMLStencilElement {
-    }
-    var HTMLMenuItemElement: {
-        prototype: HTMLMenuItemElement;
-        new (): HTMLMenuItemElement;
-    };
     interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
     }
     var HTMLMyComponentElement: {
         prototype: HTMLMyComponentElement;
         new (): HTMLMyComponentElement;
+    };
+    interface HTMLRecipeIngredientsElement extends Components.RecipeIngredients, HTMLStencilElement {
+    }
+    var HTMLRecipeIngredientsElement: {
+        prototype: HTMLRecipeIngredientsElement;
+        new (): HTMLRecipeIngredientsElement;
     };
     interface HTMLRecipePageElement extends Components.RecipePage, HTMLStencilElement {
     }
@@ -87,8 +83,8 @@ declare global {
     };
     interface HTMLElementTagNameMap {
         "list-multiplicator": HTMLListMultiplicatorElement;
-        "menu-item": HTMLMenuItemElement;
         "my-component": HTMLMyComponentElement;
+        "recipe-ingredients": HTMLRecipeIngredientsElement;
         "recipe-page": HTMLRecipePageElement;
         "sidebar-list-item": HTMLSidebarListItemElement;
         "top-nav": HTMLTopNavElement;
@@ -97,14 +93,7 @@ declare global {
 declare namespace LocalJSX {
     interface ListMultiplicator {
         "multiplicator"?: number;
-    }
-    interface MenuItem {
-        "hover1"?: string;
-        "hover2"?: string;
-        "hover3"?: string;
-        "hover4"?: string;
-        "link"?: string;
-        "name"?: string;
+        "onMultiplicatorChanged"?: (event: CustomEvent<any>) => void;
     }
     interface MyComponent {
         /**
@@ -120,6 +109,9 @@ declare namespace LocalJSX {
          */
         "middle"?: string;
     }
+    interface RecipeIngredients {
+        "multiplicator"?: number;
+    }
     interface RecipePage {
         "five"?: string;
         "four"?: string;
@@ -132,14 +124,14 @@ declare namespace LocalJSX {
     interface SidebarListItem {
         "kind"?: string;
         "unit"?: string;
-        "value"?: number;
+        "unitValue"?: number;
     }
     interface TopNav {
     }
     interface IntrinsicElements {
         "list-multiplicator": ListMultiplicator;
-        "menu-item": MenuItem;
         "my-component": MyComponent;
+        "recipe-ingredients": RecipeIngredients;
         "recipe-page": RecipePage;
         "sidebar-list-item": SidebarListItem;
         "top-nav": TopNav;
@@ -150,8 +142,8 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "list-multiplicator": LocalJSX.ListMultiplicator & JSXBase.HTMLAttributes<HTMLListMultiplicatorElement>;
-            "menu-item": LocalJSX.MenuItem & JSXBase.HTMLAttributes<HTMLMenuItemElement>;
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
+            "recipe-ingredients": LocalJSX.RecipeIngredients & JSXBase.HTMLAttributes<HTMLRecipeIngredientsElement>;
             "recipe-page": LocalJSX.RecipePage & JSXBase.HTMLAttributes<HTMLRecipePageElement>;
             "sidebar-list-item": LocalJSX.SidebarListItem & JSXBase.HTMLAttributes<HTMLSidebarListItemElement>;
             "top-nav": LocalJSX.TopNav & JSXBase.HTMLAttributes<HTMLTopNavElement>;

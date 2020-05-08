@@ -1,45 +1,48 @@
-import {Component, ComponentInterface, h, Prop} from '@stencil/core';
-
+import {
+  Component,
+  ComponentInterface,
+  h,
+  Prop,
+  State,
+  Method,
+} from "@stencil/core";
 
 @Component({
-  tag: 'sidebar-list-item',
-  styleUrl: 'sidebar-list-item.css',
+  tag: "sidebar-list-item",
+  styleUrl: "sidebar-list-item.css",
   shadow: true,
 })
 export class SidebarListItem implements ComponentInterface {
-
   @Prop() kind: string;
 
-  @Prop() value: number;
+  @Prop() unitValue: number;
 
   @Prop() unit: string;
+
+  @State() multiplicator;
+
+  @State() multiplicatedValue;
+
+  @Method() async setMultiplicator(m: number) {
+    this.multiplicator = m;
+    this.multiplicatedValue = this.getValue();
+  }
 
   private getUnit(): string {
     return this.unit;
   }
   private getValue(): number {
-    let output:number;
-    let val: number = this.value;
-    let multiplicator = document.getElementById('multi').innerHTML;
-    let multi:number = parseInt(multiplicator);
-    let singeleVal: number = val/multi;
-   if (multi>1 && multi>100)    {
-     output = singeleVal*multi;
-   }                      else{
-     output =0;
-   }
-    return output;
-  }
-  private getKind(): string {
-    return this.kind;
+    return this.unitValue * this.multiplicator;
   }
 
-
-      render() {
-        return <div> <div class={'kind'}> {this.getKind()}</div><div class={'kek'}>{this.getValue()} {this.getUnit()}</div></div>;
-    }
-
-
-
+  render() {
+    return (
+      <div>
+        <div class={"kind"}> {this.kind}</div>
+        <div class={"kek"}>
+          {this.getValue()} {this.getUnit()}
+        </div>
+      </div>
+    );
+  }
 }
-
