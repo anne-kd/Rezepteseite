@@ -8,6 +8,8 @@ import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
     interface AddNewRating {
     }
+    interface ImageViewer {
+    }
     interface MyComponent {
         /**
           * The first name
@@ -51,6 +53,12 @@ declare global {
     var HTMLAddNewRatingElement: {
         prototype: HTMLAddNewRatingElement;
         new (): HTMLAddNewRatingElement;
+    };
+    interface HTMLImageViewerElement extends Components.ImageViewer, HTMLStencilElement {
+    }
+    var HTMLImageViewerElement: {
+        prototype: HTMLImageViewerElement;
+        new (): HTMLImageViewerElement;
     };
     interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
     }
@@ -96,6 +104,7 @@ declare global {
     };
     interface HTMLElementTagNameMap {
         "add-new-rating": HTMLAddNewRatingElement;
+        "image-viewer": HTMLImageViewerElement;
         "my-component": HTMLMyComponentElement;
         "my-footer": HTMLMyFooterElement;
         "my-rating": HTMLMyRatingElement;
@@ -111,6 +120,8 @@ declare namespace LocalJSX {
         "onButtonClickOK"?: (event: CustomEvent<any>) => void;
         "onTextChanged"?: (event: CustomEvent<string>) => void;
         "onTitleChanged"?: (event: CustomEvent<string>) => void;
+    }
+    interface ImageViewer {
     }
     interface MyComponent {
         /**
@@ -151,6 +162,7 @@ declare namespace LocalJSX {
     }
     interface IntrinsicElements {
         "add-new-rating": AddNewRating;
+        "image-viewer": ImageViewer;
         "my-component": MyComponent;
         "my-footer": MyFooter;
         "my-rating": MyRating;
@@ -165,6 +177,7 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "add-new-rating": LocalJSX.AddNewRating & JSXBase.HTMLAttributes<HTMLAddNewRatingElement>;
+            "image-viewer": LocalJSX.ImageViewer & JSXBase.HTMLAttributes<HTMLImageViewerElement>;
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
             "my-footer": LocalJSX.MyFooter & JSXBase.HTMLAttributes<HTMLMyFooterElement>;
             "my-rating": LocalJSX.MyRating & JSXBase.HTMLAttributes<HTMLMyRatingElement>;
