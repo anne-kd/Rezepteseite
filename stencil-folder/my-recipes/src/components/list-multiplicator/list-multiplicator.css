@@ -1,5 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600&display=swap');
 :host {
-
+  display: block;
+  font-family: 'Montserrat', sans-serif;
 }
 button {
   border-radius: 10px;
@@ -10,6 +12,7 @@ button {
   display: inline-block;
   font-size: 21px;
   font-weight: bold;
+  margin:  0 15px;
 }
 button:hover{
   background-color: rgba(87, 125, 143, 0.45);

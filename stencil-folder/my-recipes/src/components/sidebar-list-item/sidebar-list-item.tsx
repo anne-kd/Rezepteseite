@@ -37,7 +37,7 @@ export class SidebarListItem implements ComponentInterface {
 
   render() {
     return (
-      <div>
+      <div class={'list-border'}>
         <div class={"kind"}> {this.kind}</div>
         <div class={"kek"}>
           {this.getValue()} {this.getUnit()}
