@@ -34,9 +34,10 @@ export class ImageViewer {
 
     return (
       <Host>
-        <h2> <slot></slot> </h2>
+
         <div class={!this.isBig ? "" : "wrapper"}>
-                    <div style={imgStyle} class={!this.isBig ? "showSmall" : "showBig"}>
+        <h2> <slot></slot> </h2>
+          <div style={imgStyle} class={!this.isBig ? "showSmall" : "showBig"}>
             <img onClick={(e: MouseEvent) => this.changeImgSize.emit()} src={this.imgUrl} alt={this.imgAlt} />
           </div>
         </div>

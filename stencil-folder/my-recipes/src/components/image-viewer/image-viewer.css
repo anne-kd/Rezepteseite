@@ -14,6 +14,7 @@
   transform: scale(1.1);
   transition: linear 0.25s, transform 0.25s;
   z-index: 1;
+  color: rgba(172, 172, 172, 0);
 }
 
 
