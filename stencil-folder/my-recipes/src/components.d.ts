@@ -30,11 +30,11 @@ export namespace Components {
     }
     interface MySocialShare {
     }
-    interface RecipeRatings {
-    }
     interface RecipeOverview {
         "btnText": string;
         "headline": string;
+    }
+    interface RecipeRatings {
     }
     interface TitleTitleimage {
         "btnText": string;
@@ -74,17 +74,17 @@ declare global {
         prototype: HTMLMySocialShareElement;
         new (): HTMLMySocialShareElement;
     };
-    interface HTMLRecipeRatingsElement extends Components.RecipeRatings, HTMLStencilElement {
-    }
-    var HTMLRecipeRatingsElement: {
-        prototype: HTMLRecipeRatingsElement;
-        new (): HTMLRecipeRatingsElement;
-    }
     interface HTMLRecipeOverviewElement extends Components.RecipeOverview, HTMLStencilElement {
     }
     var HTMLRecipeOverviewElement: {
         prototype: HTMLRecipeOverviewElement;
         new (): HTMLRecipeOverviewElement;
+    };
+    interface HTMLRecipeRatingsElement extends Components.RecipeRatings, HTMLStencilElement {
+    }
+    var HTMLRecipeRatingsElement: {
+        prototype: HTMLRecipeRatingsElement;
+        new (): HTMLRecipeRatingsElement;
     };
     interface HTMLTitleTitleimageElement extends Components.TitleTitleimage, HTMLStencilElement {
     }
@@ -98,8 +98,8 @@ declare global {
         "my-footer": HTMLMyFooterElement;
         "my-rating": HTMLMyRatingElement;
         "my-social-share": HTMLMySocialShareElement;
-        "recipe-ratings": HTMLRecipeRatingsElement;
         "recipe-overview": HTMLRecipeOverviewElement;
+        "recipe-ratings": HTMLRecipeRatingsElement;
         "title-titleimage": HTMLTitleTitleimageElement;
     }
 }
@@ -132,12 +132,12 @@ declare namespace LocalJSX {
     }
     interface MySocialShare {
     }
-    interface RecipeRatings {
-        "onAdd"?: (event: CustomEvent<any>) => void;
-    }
     interface RecipeOverview {
         "btnText"?: string;
         "headline"?: string;
+    }
+    interface RecipeRatings {
+        "onAdd"?: (event: CustomEvent<any>) => void;
     }
     interface TitleTitleimage {
         "btnText"?: string;
@@ -151,8 +151,8 @@ declare namespace LocalJSX {
         "my-footer": MyFooter;
         "my-rating": MyRating;
         "my-social-share": MySocialShare;
-        "recipe-ratings": RecipeRatings;
         "recipe-overview": RecipeOverview;
+        "recipe-ratings": RecipeRatings;
         "title-titleimage": TitleTitleimage;
     }
 }
@@ -165,8 +165,8 @@ declare module "@stencil/core" {
             "my-footer": LocalJSX.MyFooter & JSXBase.HTMLAttributes<HTMLMyFooterElement>;
             "my-rating": LocalJSX.MyRating & JSXBase.HTMLAttributes<HTMLMyRatingElement>;
             "my-social-share": LocalJSX.MySocialShare & JSXBase.HTMLAttributes<HTMLMySocialShareElement>;
-            "recipe-ratings": LocalJSX.RecipeRatings & JSXBase.HTMLAttributes<HTMLRecipeRatingsElement>;
             "recipe-overview": LocalJSX.RecipeOverview & JSXBase.HTMLAttributes<HTMLRecipeOverviewElement>;
+            "recipe-ratings": LocalJSX.RecipeRatings & JSXBase.HTMLAttributes<HTMLRecipeRatingsElement>;
             "title-titleimage": LocalJSX.TitleTitleimage & JSXBase.HTMLAttributes<HTMLTitleTitleimageElement>;
         }
     }

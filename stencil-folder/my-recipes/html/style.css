@@ -12,13 +12,16 @@ recipe-ratings {
     width: 80%;
     margin: 0 auto;
 }
+
+recipe-overview,
 my-footer{
-    width: 96%;
+    width: 98%;
     margin: 0 auto;
     margin-top: 5%;
 }
 title-titleimage {
     height: 100vh;
+
 }
 recipe-overview {
     display: block;
