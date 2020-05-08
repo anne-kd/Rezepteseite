@@ -10,6 +10,10 @@ my-rating,
 recipe-ratings {
     display: block;
     width: 80%;
-    height: auto;
     margin: 0 auto;
+}
+my-footer{
+    width: 96%;
+    margin: 0 auto;
+    margin-top: 5%;
 }

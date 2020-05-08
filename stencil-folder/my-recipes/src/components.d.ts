@@ -22,15 +22,15 @@ export namespace Components {
          */
         "middle": string;
     }
+    interface MyFooter {
+    }
     interface MyRating {
         "headline": string;
         "rate": string;
     }
-    interface RecipeRatings {
-    }
-    interface MyFooter {
-    }
     interface MySocialShare {
+    }
+    interface RecipeRatings {
     }
 }
 declare global {
@@ -46,23 +46,17 @@ declare global {
         prototype: HTMLMyComponentElement;
         new (): HTMLMyComponentElement;
     };
-    interface HTMLMyRatingElement extends Components.MyRating, HTMLStencilElement {
-    }
-    var HTMLMyRatingElement: {
-        prototype: HTMLMyRatingElement;
-        new (): HTMLMyRatingElement;
-    };
-    interface HTMLRecipeRatingsElement extends Components.RecipeRatings, HTMLStencilElement {
-    }
-    var HTMLRecipeRatingsElement: {
-        prototype: HTMLRecipeRatingsElement;
-        new (): HTMLRecipeRatingsElement;
-    }
     interface HTMLMyFooterElement extends Components.MyFooter, HTMLStencilElement {
     }
     var HTMLMyFooterElement: {
         prototype: HTMLMyFooterElement;
         new (): HTMLMyFooterElement;
+    };
+    interface HTMLMyRatingElement extends Components.MyRating, HTMLStencilElement {
+    }
+    var HTMLMyRatingElement: {
+        prototype: HTMLMyRatingElement;
+        new (): HTMLMyRatingElement;
     };
     interface HTMLMySocialShareElement extends Components.MySocialShare, HTMLStencilElement {
     }
@@ -70,13 +64,19 @@ declare global {
         prototype: HTMLMySocialShareElement;
         new (): HTMLMySocialShareElement;
     };
+    interface HTMLRecipeRatingsElement extends Components.RecipeRatings, HTMLStencilElement {
+    }
+    var HTMLRecipeRatingsElement: {
+        prototype: HTMLRecipeRatingsElement;
+        new (): HTMLRecipeRatingsElement;
+    };
     interface HTMLElementTagNameMap {
         "add-new-rating": HTMLAddNewRatingElement;
         "my-component": HTMLMyComponentElement;
-        "my-rating": HTMLMyRatingElement;
-        "recipe-ratings": HTMLRecipeRatingsElement;
         "my-footer": HTMLMyFooterElement;
+        "my-rating": HTMLMyRatingElement;
         "my-social-share": HTMLMySocialShareElement;
+        "recipe-ratings": HTMLRecipeRatingsElement;
     }
 }
 declare namespace LocalJSX {
@@ -100,24 +100,24 @@ declare namespace LocalJSX {
          */
         "middle"?: string;
     }
+    interface MyFooter {
+    }
     interface MyRating {
         "headline"?: string;
         "rate"?: string;
     }
+    interface MySocialShare {
+    }
     interface RecipeRatings {
         "onAdd"?: (event: CustomEvent<any>) => void;
-    }
-    interface MyFooter {
-    }
-    interface MySocialShare {
     }
     interface IntrinsicElements {
         "add-new-rating": AddNewRating;
         "my-component": MyComponent;
-        "my-rating": MyRating;
-        "recipe-ratings": RecipeRatings;
         "my-footer": MyFooter;
+        "my-rating": MyRating;
         "my-social-share": MySocialShare;
+        "recipe-ratings": RecipeRatings;
     }
 }
 export { LocalJSX as JSX };
@@ -126,10 +126,10 @@ declare module "@stencil/core" {
         interface IntrinsicElements {
             "add-new-rating": LocalJSX.AddNewRating & JSXBase.HTMLAttributes<HTMLAddNewRatingElement>;
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
-            "my-rating": LocalJSX.MyRating & JSXBase.HTMLAttributes<HTMLMyRatingElement>;
-            "recipe-ratings": LocalJSX.RecipeRatings & JSXBase.HTMLAttributes<HTMLRecipeRatingsElement>;
             "my-footer": LocalJSX.MyFooter & JSXBase.HTMLAttributes<HTMLMyFooterElement>;
+            "my-rating": LocalJSX.MyRating & JSXBase.HTMLAttributes<HTMLMyRatingElement>;
             "my-social-share": LocalJSX.MySocialShare & JSXBase.HTMLAttributes<HTMLMySocialShareElement>;
+            "recipe-ratings": LocalJSX.RecipeRatings & JSXBase.HTMLAttributes<HTMLRecipeRatingsElement>;
         }
     }
 }

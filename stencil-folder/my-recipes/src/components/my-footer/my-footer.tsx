@@ -13,7 +13,7 @@ export class MyFooter implements ComponentInterface {
         <div id="footer">
           <a href="impressum.html">Impressum</a>
           <a href="impressum.html">Datenschutz</a>
-          
+          <div id="placeholder"></div>
           <my-social-share></my-social-share>
         </div>
       </Host>

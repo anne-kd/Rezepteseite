@@ -8,9 +8,6 @@
 div {
   position: relative;
   display: inline-block;
-  -ms-transform:translate(-50%,-50%);
-  -webkit-transform:translate(-50%,-50%);
-  transform:translate(-50%,-50%);
 }
 
 a {
@@ -57,9 +54,6 @@ a span {
   -moz-transition: all .5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
   transition: all .5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
-
-/* pop-up text arrow */
-
 a span:before {
   content:'';
   width: 0; 
@@ -71,9 +65,6 @@ a span:before {
   bottom:-5px;
   left:40px;
 }
-
-/* text pops up when icon is in hover state */
-
 a:hover span {
   bottom:50px;
   visibility:visible;
