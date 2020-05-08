@@ -1,4 +1,4 @@
-import { Component, ComponentInterface, Host, h, Prop } from '@stencil/core';
+import { Component, Host, h, Prop, State, Event, EventEmitter, JSX, Listen } from '@stencil/core';
 
 
 //this component allows you to insert an image
@@ -8,14 +8,24 @@ import { Component, ComponentInterface, Host, h, Prop } from '@stencil/core';
   styleUrl: 'image-viewer.css',
   shadow: true,
 })
-export class ImageViewer implements ComponentInterface {
+export class ImageViewer {
   //you can set the image sourceUrl, alternative text and the width
   @Prop() imgUrl: string;
   @Prop() imgAlt: string;
   @Prop() imgWidth: string;
 
- 
-  render() {
+  @Event() private getBig: EventEmitter;
+  @Event() private getSmall: EventEmitter;
+  @Event() private changeImgSize: EventEmitter;
+
+  @State() isBig: boolean = false;
+  @Listen("changeImgSize")
+  private handleClick() {
+    this.isBig = !this.isBig;
+    this.isBig ? this.getBig.emit() : this.getSmall.emit();
+  }
+
+  render(): JSX.Element {
 
     //this const lets you add any width you like; the height is fixed for optical reeasons
     const imgStyle = {
@@ -25,8 +35,10 @@ export class ImageViewer implements ComponentInterface {
     return (
       <Host>
         <h2> <slot></slot> </h2>
-        <div style={imgStyle} class="imgSize">
-          <img src={this.imgUrl} alt={this.imgAlt} />   
+        <div class={!this.isBig ? "" : "wrapper"}>
+                    <div style={imgStyle} class={!this.isBig ? "showSmall" : "showBig"}>
+            <img onClick={(e: MouseEvent) => this.changeImgSize.emit()} src={this.imgUrl} alt={this.imgAlt} />
+          </div>
         </div>
       </Host>
     );
