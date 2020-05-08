@@ -8,6 +8,11 @@ import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
     interface AddNewRating {
     }
+    interface ImageViewer {
+        "imgAlt": string;
+        "imgUrl": string;
+        "imgWidth": string;
+    }
     interface MyComponent {
         /**
           * The first name
@@ -31,12 +36,14 @@ export namespace Components {
     interface MySocialShare {
     }
     interface RecipeOverview {
+        "btnGoalUrl": string;
         "btnText": string;
         "headline": string;
     }
     interface RecipeRatings {
     }
     interface TitleTitleimage {
+        "btnGoalUrl": string;
         "btnText": string;
         "btnVisible": boolean;
         "imageAlt": string;
@@ -49,6 +56,12 @@ declare global {
     var HTMLAddNewRatingElement: {
         prototype: HTMLAddNewRatingElement;
         new (): HTMLAddNewRatingElement;
+    }
+    interface HTMLImageViewerElement extends Components.ImageViewer, HTMLStencilElement {
+    }
+    var HTMLImageViewerElement: {
+        prototype: HTMLImageViewerElement;
+        new (): HTMLImageViewerElement;
     };
     interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
     }
@@ -94,6 +107,7 @@ declare global {
     };
     interface HTMLElementTagNameMap {
         "add-new-rating": HTMLAddNewRatingElement;
+        "image-viewer": HTMLImageViewerElement;
         "my-component": HTMLMyComponentElement;
         "my-footer": HTMLMyFooterElement;
         "my-rating": HTMLMyRatingElement;
@@ -109,6 +123,11 @@ declare namespace LocalJSX {
         "onButtonClickOK"?: (event: CustomEvent<any>) => void;
         "onTextChanged"?: (event: CustomEvent<string>) => void;
         "onTitleChanged"?: (event: CustomEvent<string>) => void;
+    }
+    interface ImageViewer {
+        "imgAlt"?: string;
+        "imgUrl"?: string;
+        "imgWidth"?: string;
     }
     interface MyComponent {
         /**
@@ -133,6 +152,7 @@ declare namespace LocalJSX {
     interface MySocialShare {
     }
     interface RecipeOverview {
+        "btnGoalUrl"?: string;
         "btnText"?: string;
         "headline"?: string;
     }
@@ -140,6 +160,7 @@ declare namespace LocalJSX {
         "onAdd"?: (event: CustomEvent<any>) => void;
     }
     interface TitleTitleimage {
+        "btnGoalUrl"?: string;
         "btnText"?: string;
         "btnVisible"?: boolean;
         "imageAlt"?: string;
@@ -147,6 +168,7 @@ declare namespace LocalJSX {
     }
     interface IntrinsicElements {
         "add-new-rating": AddNewRating;
+        "image-viewer": ImageViewer;
         "my-component": MyComponent;
         "my-footer": MyFooter;
         "my-rating": MyRating;
@@ -161,6 +183,7 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "add-new-rating": LocalJSX.AddNewRating & JSXBase.HTMLAttributes<HTMLAddNewRatingElement>;
+            "image-viewer": LocalJSX.ImageViewer & JSXBase.HTMLAttributes<HTMLImageViewerElement>;
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
             "my-footer": LocalJSX.MyFooter & JSXBase.HTMLAttributes<HTMLMyFooterElement>;
             "my-rating": LocalJSX.MyRating & JSXBase.HTMLAttributes<HTMLMyRatingElement>;
