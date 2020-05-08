@@ -9,6 +9,9 @@ export namespace Components {
     interface AddNewRating {
     }
     interface ImageViewer {
+        "imgAlt": string;
+        "imgUrl": string;
+        "imgWidth": string;
     }
     interface MyComponent {
         /**
@@ -122,6 +125,9 @@ declare namespace LocalJSX {
         "onTitleChanged"?: (event: CustomEvent<string>) => void;
     }
     interface ImageViewer {
+        "imgAlt"?: string;
+        "imgUrl"?: string;
+        "imgWidth"?: string;
     }
     interface MyComponent {
         /**
