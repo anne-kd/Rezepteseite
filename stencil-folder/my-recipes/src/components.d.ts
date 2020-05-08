@@ -45,6 +45,8 @@ export namespace Components {
         "unit": string;
         "value": number;
     }
+    interface TopNav {
+    }
 }
 declare global {
     interface HTMLListMultiplicatorElement extends Components.ListMultiplicator, HTMLStencilElement {
@@ -77,12 +79,19 @@ declare global {
         prototype: HTMLSidebarListItemElement;
         new (): HTMLSidebarListItemElement;
     };
+    interface HTMLTopNavElement extends Components.TopNav, HTMLStencilElement {
+    }
+    var HTMLTopNavElement: {
+        prototype: HTMLTopNavElement;
+        new (): HTMLTopNavElement;
+    };
     interface HTMLElementTagNameMap {
         "list-multiplicator": HTMLListMultiplicatorElement;
         "menu-item": HTMLMenuItemElement;
         "my-component": HTMLMyComponentElement;
         "recipe-page": HTMLRecipePageElement;
         "sidebar-list-item": HTMLSidebarListItemElement;
+        "top-nav": HTMLTopNavElement;
     }
 }
 declare namespace LocalJSX {
@@ -125,12 +134,15 @@ declare namespace LocalJSX {
         "unit"?: string;
         "value"?: number;
     }
+    interface TopNav {
+    }
     interface IntrinsicElements {
         "list-multiplicator": ListMultiplicator;
         "menu-item": MenuItem;
         "my-component": MyComponent;
         "recipe-page": RecipePage;
         "sidebar-list-item": SidebarListItem;
+        "top-nav": TopNav;
     }
 }
 export { LocalJSX as JSX };
@@ -142,6 +154,7 @@ declare module "@stencil/core" {
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
             "recipe-page": LocalJSX.RecipePage & JSXBase.HTMLAttributes<HTMLRecipePageElement>;
             "sidebar-list-item": LocalJSX.SidebarListItem & JSXBase.HTMLAttributes<HTMLSidebarListItemElement>;
+            "top-nav": LocalJSX.TopNav & JSXBase.HTMLAttributes<HTMLTopNavElement>;
         }
     }
 }
