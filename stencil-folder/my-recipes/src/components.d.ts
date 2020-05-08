@@ -32,6 +32,16 @@ export namespace Components {
     }
     interface RecipeRatings {
     }
+    interface RecipeOverview {
+        "btnText": string;
+        "headline": string;
+    }
+    interface TitleTitleimage {
+        "btnText": string;
+        "btnVisible": boolean;
+        "imageAlt": string;
+        "imageUrl": string;
+    }
 }
 declare global {
     interface HTMLAddNewRatingElement extends Components.AddNewRating, HTMLStencilElement {
@@ -69,6 +79,18 @@ declare global {
     var HTMLRecipeRatingsElement: {
         prototype: HTMLRecipeRatingsElement;
         new (): HTMLRecipeRatingsElement;
+    }
+    interface HTMLRecipeOverviewElement extends Components.RecipeOverview, HTMLStencilElement {
+    }
+    var HTMLRecipeOverviewElement: {
+        prototype: HTMLRecipeOverviewElement;
+        new (): HTMLRecipeOverviewElement;
+    };
+    interface HTMLTitleTitleimageElement extends Components.TitleTitleimage, HTMLStencilElement {
+    }
+    var HTMLTitleTitleimageElement: {
+        prototype: HTMLTitleTitleimageElement;
+        new (): HTMLTitleTitleimageElement;
     };
     interface HTMLElementTagNameMap {
         "add-new-rating": HTMLAddNewRatingElement;
@@ -77,6 +99,8 @@ declare global {
         "my-rating": HTMLMyRatingElement;
         "my-social-share": HTMLMySocialShareElement;
         "recipe-ratings": HTMLRecipeRatingsElement;
+        "recipe-overview": HTMLRecipeOverviewElement;
+        "title-titleimage": HTMLTitleTitleimageElement;
     }
 }
 declare namespace LocalJSX {
@@ -111,6 +135,16 @@ declare namespace LocalJSX {
     interface RecipeRatings {
         "onAdd"?: (event: CustomEvent<any>) => void;
     }
+    interface RecipeOverview {
+        "btnText"?: string;
+        "headline"?: string;
+    }
+    interface TitleTitleimage {
+        "btnText"?: string;
+        "btnVisible"?: boolean;
+        "imageAlt"?: string;
+        "imageUrl"?: string;
+    }
     interface IntrinsicElements {
         "add-new-rating": AddNewRating;
         "my-component": MyComponent;
@@ -118,6 +152,8 @@ declare namespace LocalJSX {
         "my-rating": MyRating;
         "my-social-share": MySocialShare;
         "recipe-ratings": RecipeRatings;
+        "recipe-overview": RecipeOverview;
+        "title-titleimage": TitleTitleimage;
     }
 }
 export { LocalJSX as JSX };
@@ -130,6 +166,8 @@ declare module "@stencil/core" {
             "my-rating": LocalJSX.MyRating & JSXBase.HTMLAttributes<HTMLMyRatingElement>;
             "my-social-share": LocalJSX.MySocialShare & JSXBase.HTMLAttributes<HTMLMySocialShareElement>;
             "recipe-ratings": LocalJSX.RecipeRatings & JSXBase.HTMLAttributes<HTMLRecipeRatingsElement>;
+            "recipe-overview": LocalJSX.RecipeOverview & JSXBase.HTMLAttributes<HTMLRecipeOverviewElement>;
+            "title-titleimage": LocalJSX.TitleTitleimage & JSXBase.HTMLAttributes<HTMLTitleTitleimageElement>;
         }
     }
 }

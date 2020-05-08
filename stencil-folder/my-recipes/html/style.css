@@ -17,3 +17,10 @@ my-footer{
     margin: 0 auto;
     margin-top: 5%;
 }
+title-titleimage {
+    height: 100vh;
+}
+recipe-overview {
+    display: block;
+    position: relative;
+}
