@@ -11,20 +11,20 @@
 button {
   font-family: 'Montserrat', sans-serif;
   font-weight: bold;
-  font-size: 30px;
+  font-size: 2em;
   position: relative;
   padding: 5px 15px;
   background-color: transparent;
-  color: #343434;
-  border: 5px solid #343434;
+  color: white;
+  border: 5px solid white;
   margin-top: 28%;
   margin-left: 8%;
   cursor: pointer;
 }
 
 h1 {
-  color: #343434;
-  font-size: 60px;
+  color: white;
+  font-size: 3em;
   position: absolute;
   margin-top: 16%;
   margin-left: 8%;
