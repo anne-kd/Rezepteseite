@@ -47,10 +47,10 @@ export class AddNewRating implements ComponentInterface {
               ref={(el)=> this.titleInput = el as HTMLElement}
             />
           <label htmlFor="rating"> Beschreibung </label>
-            <input type="text" name="rating" id="rating" 
+            <textarea  name="rating" id="rating" 
               onInput={(e: UIEvent) => this.changeText(e)}
               ref={(el)=> this.textInput = el as HTMLElement}
-            />
+            ></textarea>
           <button id="ok" onClick = {(e: UIEvent) => this.send()}>OK</button>
           <button id="cancel" onClick = {(e: UIEvent) => this.delete()}>Abbrechen</button>
         </div>

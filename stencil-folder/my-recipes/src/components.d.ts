@@ -128,6 +128,9 @@ declare namespace LocalJSX {
         "imgAlt"?: string;
         "imgUrl"?: string;
         "imgWidth"?: string;
+        "onChangeImgSize"?: (event: CustomEvent<any>) => void;
+        "onGetBig"?: (event: CustomEvent<any>) => void;
+        "onGetSmall"?: (event: CustomEvent<any>) => void;
     }
     interface MyComponent {
         /**

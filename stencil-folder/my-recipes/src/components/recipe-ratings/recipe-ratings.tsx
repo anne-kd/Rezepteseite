@@ -15,8 +15,11 @@ export class RecipeRatings implements ComponentInterface {
   @Listen("add")
   addRating(){
     this.closePopup();
-    let html = `<my-rating headline="${this.titleValue}" rate="${this.ratingValue}"></my-rating>`;
-    this.ratingBox.insertAdjacentHTML('afterend', html);
+    if (this.ratingValue != null || this.titleValue != null){
+      let html = `<my-rating headline="${this.titleValue}" rate="${this.ratingValue}"></my-rating>`;
+      this.ratingBox.insertAdjacentHTML('afterend', html);
+    }
+    
   }
 
   showPopup(){
