@@ -4,6 +4,8 @@
 html, body {
     font-family: 'Montserrat', sans-serif;
     font-weight: 300;
+    margin: 0;
+    padding: 0;
 }
 #impressions,
 my-rating,
@@ -21,9 +23,17 @@ my-footer{
 }
 
 title-titleimage {
-    height: 100vh;
+    height: 90vh;
 }
 recipe-overview {
     display: block;
     position: relative;
+}
+recipe-page {
+    width: 70%;
+}
+
+.sidebar{
+    width: 20%;
+    margin-left: 5%;
 }

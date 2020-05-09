@@ -31,18 +31,18 @@ export class ListMultiplicator implements ComponentInterface {
         <h2>Mitspeisende</h2>
         <button
           onClick={() => {
-            this.handleClick("+");
-          }}
-        >
-          +
-        </button>
-        <h3>{this.multiplicator}</h3>
-        <button
-          onClick={() => {
             this.handleClick("-");
           }}
         >
           -
+        </button>
+          <h3>{this.multiplicator}</h3>
+        <button
+          onClick={() => {
+            this.handleClick("+");
+          }}
+        >
+          +
         </button>
         <h2>Zutaten</h2>
       </host>

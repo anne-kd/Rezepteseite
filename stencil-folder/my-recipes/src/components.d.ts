@@ -38,12 +38,30 @@ export namespace Components {
     }
     interface MySocialShare {
     }
+    interface RecipeIngredients {
+        "multiplicator": number;
+    }
     interface RecipeOverview {
         "btnGoalUrl": string;
         "btnText": string;
         "headline": string;
     }
+    interface RecipePage {
+        "five": string;
+        "four": string;
+        "image": string;
+        "one": string;
+        "three": string;
+        "title": string;
+        "two": string;
+    }
     interface RecipeRatings {
+    }
+    interface SidebarListItem {
+        "kind": string;
+        "setMultiplicator": (m: number) => Promise<void>;
+        "unit": string;
+        "unitValue": number;
     }
     interface TitleTitleimage {
         "btnGoalUrl": string;
@@ -51,6 +69,8 @@ export namespace Components {
         "btnVisible": boolean;
         "imageAlt": string;
         "imageUrl": string;
+    }
+    interface TopNav {
     }
 }
 declare global {
@@ -65,29 +85,7 @@ declare global {
     var HTMLImageViewerElement: {
         prototype: HTMLImageViewerElement;
         new (): HTMLImageViewerElement;
-    }
-    interface RecipeIngredients {
-        "multiplicator": number;
-    }
-    interface RecipePage {
-        "five": string;
-        "four": string;
-        "image": string;
-        "one": string;
-        "three": string;
-        "title": string;
-        "two": string;
-    }
-    interface SidebarListItem {
-        "kind": string;
-        "setMultiplicator": (m: number) => Promise<void>;
-        "unit": string;
-        "unitValue": number;
-    }
-    interface TopNav {
-    }
-}
-declare global {
+    };
     interface HTMLListMultiplicatorElement extends Components.ListMultiplicator, HTMLStencilElement {
     }
     var HTMLListMultiplicatorElement: {
@@ -118,11 +116,23 @@ declare global {
         prototype: HTMLMySocialShareElement;
         new (): HTMLMySocialShareElement;
     };
+    interface HTMLRecipeIngredientsElement extends Components.RecipeIngredients, HTMLStencilElement {
+    }
+    var HTMLRecipeIngredientsElement: {
+        prototype: HTMLRecipeIngredientsElement;
+        new (): HTMLRecipeIngredientsElement;
+    };
     interface HTMLRecipeOverviewElement extends Components.RecipeOverview, HTMLStencilElement {
     }
     var HTMLRecipeOverviewElement: {
         prototype: HTMLRecipeOverviewElement;
         new (): HTMLRecipeOverviewElement;
+    };
+    interface HTMLRecipePageElement extends Components.RecipePage, HTMLStencilElement {
+    }
+    var HTMLRecipePageElement: {
+        prototype: HTMLRecipePageElement;
+        new (): HTMLRecipePageElement;
     };
     interface HTMLRecipeRatingsElement extends Components.RecipeRatings, HTMLStencilElement {
     }
@@ -130,22 +140,39 @@ declare global {
         prototype: HTMLRecipeRatingsElement;
         new (): HTMLRecipeRatingsElement;
     };
+    interface HTMLSidebarListItemElement extends Components.SidebarListItem, HTMLStencilElement {
+    }
+    var HTMLSidebarListItemElement: {
+        prototype: HTMLSidebarListItemElement;
+        new (): HTMLSidebarListItemElement;
+    };
     interface HTMLTitleTitleimageElement extends Components.TitleTitleimage, HTMLStencilElement {
     }
     var HTMLTitleTitleimageElement: {
         prototype: HTMLTitleTitleimageElement;
         new (): HTMLTitleTitleimageElement;
     };
+    interface HTMLTopNavElement extends Components.TopNav, HTMLStencilElement {
+    }
+    var HTMLTopNavElement: {
+        prototype: HTMLTopNavElement;
+        new (): HTMLTopNavElement;
+    };
     interface HTMLElementTagNameMap {
         "add-new-rating": HTMLAddNewRatingElement;
         "image-viewer": HTMLImageViewerElement;
+        "list-multiplicator": HTMLListMultiplicatorElement;
         "my-component": HTMLMyComponentElement;
         "my-footer": HTMLMyFooterElement;
         "my-rating": HTMLMyRatingElement;
         "my-social-share": HTMLMySocialShareElement;
+        "recipe-ingredients": HTMLRecipeIngredientsElement;
         "recipe-overview": HTMLRecipeOverviewElement;
+        "recipe-page": HTMLRecipePageElement;
         "recipe-ratings": HTMLRecipeRatingsElement;
+        "sidebar-list-item": HTMLSidebarListItemElement;
         "title-titleimage": HTMLTitleTitleimageElement;
+        "top-nav": HTMLTopNavElement;
     }
 }
 declare namespace LocalJSX {
@@ -163,40 +190,6 @@ declare namespace LocalJSX {
         "onGetBig"?: (event: CustomEvent<any>) => void;
         "onGetSmall"?: (event: CustomEvent<any>) => void;
     }
-    interface HTMLRecipeIngredientsElement extends Components.RecipeIngredients, HTMLStencilElement {
-    }
-    var HTMLRecipeIngredientsElement: {
-        prototype: HTMLRecipeIngredientsElement;
-        new (): HTMLRecipeIngredientsElement;
-    };
-    interface HTMLRecipePageElement extends Components.RecipePage, HTMLStencilElement {
-    }
-    var HTMLRecipePageElement: {
-        prototype: HTMLRecipePageElement;
-        new (): HTMLRecipePageElement;
-    };
-    interface HTMLSidebarListItemElement extends Components.SidebarListItem, HTMLStencilElement {
-    }
-    var HTMLSidebarListItemElement: {
-        prototype: HTMLSidebarListItemElement;
-        new (): HTMLSidebarListItemElement;
-    };
-    interface HTMLTopNavElement extends Components.TopNav, HTMLStencilElement {
-    }
-    var HTMLTopNavElement: {
-        prototype: HTMLTopNavElement;
-        new (): HTMLTopNavElement;
-    };
-    interface HTMLElementTagNameMap {
-        "list-multiplicator": HTMLListMultiplicatorElement;
-        "my-component": HTMLMyComponentElement;
-        "recipe-ingredients": HTMLRecipeIngredientsElement;
-        "recipe-page": HTMLRecipePageElement;
-        "sidebar-list-item": HTMLSidebarListItemElement;
-        "top-nav": HTMLTopNavElement;
-    }
-}
-declare namespace LocalJSX {
     interface ListMultiplicator {
         "multiplicator"?: number;
         "onMultiplicatorChanged"?: (event: CustomEvent<any>) => void;
@@ -223,34 +216,13 @@ declare namespace LocalJSX {
     }
     interface MySocialShare {
     }
+    interface RecipeIngredients {
+        "multiplicator"?: number;
+    }
     interface RecipeOverview {
         "btnGoalUrl"?: string;
         "btnText"?: string;
         "headline"?: string;
-    }
-    interface RecipeRatings {
-        "onAdd"?: (event: CustomEvent<any>) => void;
-    }
-    interface TitleTitleimage {
-        "btnGoalUrl"?: string;
-        "btnText"?: string;
-        "btnVisible"?: boolean;
-        "imageAlt"?: string;
-        "imageUrl"?: string;
-    }
-    interface IntrinsicElements {
-        "add-new-rating": AddNewRating;
-        "image-viewer": ImageViewer;
-        "my-component": MyComponent;
-        "my-footer": MyFooter;
-        "my-rating": MyRating;
-        "my-social-share": MySocialShare;
-        "recipe-overview": RecipeOverview;
-        "recipe-ratings": RecipeRatings;
-        "title-titleimage": TitleTitleimage;
-    }
-    interface RecipeIngredients {
-        "multiplicator"?: number;
     }
     interface RecipePage {
         "five"?: string;
@@ -261,19 +233,37 @@ declare namespace LocalJSX {
         "title"?: string;
         "two"?: string;
     }
+    interface RecipeRatings {
+        "onAdd"?: (event: CustomEvent<any>) => void;
+    }
     interface SidebarListItem {
         "kind"?: string;
         "unit"?: string;
         "unitValue"?: number;
     }
+    interface TitleTitleimage {
+        "btnGoalUrl"?: string;
+        "btnText"?: string;
+        "btnVisible"?: boolean;
+        "imageAlt"?: string;
+        "imageUrl"?: string;
+    }
     interface TopNav {
     }
     interface IntrinsicElements {
+        "add-new-rating": AddNewRating;
+        "image-viewer": ImageViewer;
         "list-multiplicator": ListMultiplicator;
         "my-component": MyComponent;
+        "my-footer": MyFooter;
+        "my-rating": MyRating;
+        "my-social-share": MySocialShare;
         "recipe-ingredients": RecipeIngredients;
+        "recipe-overview": RecipeOverview;
         "recipe-page": RecipePage;
+        "recipe-ratings": RecipeRatings;
         "sidebar-list-item": SidebarListItem;
+        "title-titleimage": TitleTitleimage;
         "top-nav": TopNav;
     }
 }
@@ -283,17 +273,17 @@ declare module "@stencil/core" {
         interface IntrinsicElements {
             "add-new-rating": LocalJSX.AddNewRating & JSXBase.HTMLAttributes<HTMLAddNewRatingElement>;
             "image-viewer": LocalJSX.ImageViewer & JSXBase.HTMLAttributes<HTMLImageViewerElement>;
+            "list-multiplicator": LocalJSX.ListMultiplicator & JSXBase.HTMLAttributes<HTMLListMultiplicatorElement>;
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
             "my-footer": LocalJSX.MyFooter & JSXBase.HTMLAttributes<HTMLMyFooterElement>;
             "my-rating": LocalJSX.MyRating & JSXBase.HTMLAttributes<HTMLMyRatingElement>;
             "my-social-share": LocalJSX.MySocialShare & JSXBase.HTMLAttributes<HTMLMySocialShareElement>;
-            "recipe-overview": LocalJSX.RecipeOverview & JSXBase.HTMLAttributes<HTMLRecipeOverviewElement>;
-            "recipe-ratings": LocalJSX.RecipeRatings & JSXBase.HTMLAttributes<HTMLRecipeRatingsElement>;
-            "title-titleimage": LocalJSX.TitleTitleimage & JSXBase.HTMLAttributes<HTMLTitleTitleimageElement>;
-            "list-multiplicator": LocalJSX.ListMultiplicator & JSXBase.HTMLAttributes<HTMLListMultiplicatorElement>;
             "recipe-ingredients": LocalJSX.RecipeIngredients & JSXBase.HTMLAttributes<HTMLRecipeIngredientsElement>;
+            "recipe-overview": LocalJSX.RecipeOverview & JSXBase.HTMLAttributes<HTMLRecipeOverviewElement>;
             "recipe-page": LocalJSX.RecipePage & JSXBase.HTMLAttributes<HTMLRecipePageElement>;
+            "recipe-ratings": LocalJSX.RecipeRatings & JSXBase.HTMLAttributes<HTMLRecipeRatingsElement>;
             "sidebar-list-item": LocalJSX.SidebarListItem & JSXBase.HTMLAttributes<HTMLSidebarListItemElement>;
+            "title-titleimage": LocalJSX.TitleTitleimage & JSXBase.HTMLAttributes<HTMLTitleTitleimageElement>;
             "top-nav": LocalJSX.TopNav & JSXBase.HTMLAttributes<HTMLTopNavElement>;
         }
     }

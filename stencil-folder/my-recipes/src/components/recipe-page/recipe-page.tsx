@@ -32,9 +32,15 @@ export class RecipePage implements ComponentInterface {
 
   render() {
     return (
-      <Host> <img src={this.getImage()}/><div class={'content'}> <h1>{this.getTitle()}</h1><hr></hr>
-
-        <div class={'text'}><div innerHTML={this.getSteps()}></div></div></div>
+      <Host> 
+        <img src={this.getImage()}/>
+        <div class={'content'}> 
+          <h1>{this.getTitle()}</h1>
+          <hr></hr>
+          <div class={'text'}>
+            <div innerHTML={this.getSteps()}></div>
+          </div>
+        </div>
       </Host>
     );
   }
