@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600&display=swap');
+:host {
+  display: block;
+  font-family: 'Montserrat', sans-serif;
+}
+.kek{
+  color: black;
+  display: inline;
+  font-weight: bold;
+  margin-right: 50px;
+
+}
+.kind{
+  display: inline;
+  margin-left: 20px;
+
+  position: absolute;
+  left: 100px;
+}
+.list-border{
+  position: relative;
+  margin: 17px 0;
+}
