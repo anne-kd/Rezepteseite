@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Schokobrocken</title>
+    <script src="../dist/my-recipes.js"></script>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+  <top-nav></top-nav>
+  <div style="display: flex;">
+  <recipe-page
+    title="Schokobrocken"
+    image="../src/assets/brownies.jpg"
+    one="Heize den Ofen auf 175°C vor."
+    two="Als nächstes 150g Zartbitterschokolade mit der Butter in einem Topf schmelzen lassen."
+    three="Vermische braunen Zucker und Vanillezucker und schlag sie mit den Eiern schaumig. Gib die Schoko-Buttermasse hinzu. Vermenge das Mehl mit Backpulver, Salz und Kakaopulver und hebe die Mischung in die Eismasse unter. Gib den Teig auf ein Blech und backe es für 20 Minuten."
+    four="Das Ganze ergibt ca. 12 Brownies. Schmelze bei Bedarf die übrige Schokolade darüber. Fertig!"
+  ></recipe-page>
+
+    <div class="sidebar">
+      <recipe-ingredients multiplicator="1">
+        <sidebar-list-item
+          kind="Butter"
+          unit-value="150"
+          unit="g"
+        ></sidebar-list-item>
+        <sidebar-list-item 
+        kind="Zartbitterschokolade" 
+        unit-value="250"
+        unit="g"
+        ></sidebar-list-item>
+        <sidebar-list-item
+          kind="Eier"
+          unit-value="3"
+          unit=""
+        ></sidebar-list-item>
+        <sidebar-list-item
+          kind="Brauner Zucker"
+          unit-value="200"
+          unit="g"
+        ></sidebar-list-item>
+        <sidebar-list-item
+          kind="Mehl"
+          unit-value="150"
+          unit="g"
+        ></sidebar-list-item>
+        <sidebar-list-item
+          kind="Backpulver"
+          unit-value="1"
+          unit="TL"
+        ></sidebar-list-item>
+        <sidebar-list-item
+          kind="Salz"
+          unit-value="1"
+          unit="Prise"
+        ></sidebar-list-item>
+        <sidebar-list-item
+          kind="Kakaopulver"
+          unit-value="1"
+          unit="EL"
+        ></sidebar-list-item>
+        <sidebar-list-item
+          kind="Vanillezucker"
+          unit-value="1"
+          unit="Pck."
+        ></sidebar-list-item>
+		
+      </recipe-ingredients>
+    </div>
+  </div>
+
+  <div id="impressions">
+  </div>
+  <recipe-ratings>Bewertungen</recipe-ratings>
+  <my-footer></my-footer>
+
+  </body>
+</html>

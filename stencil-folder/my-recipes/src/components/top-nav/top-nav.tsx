@@ -20,10 +20,14 @@ export class TopNav implements ComponentInterface {
           </ul>
           <ul class="small">
             <li><a href="index.html">Home</a> </li>
-            <li><a href="#">Anne</a> <ul class="small-drop">
+            <li><a href="#">Anne</a> 
+            <ul class="small-drop">
               <li><a href="zitronenhuhn.html">Zitronenhühnchen</a> </li>
             </ul></li>
-            <li><a href="#">Krissis</a> </li>
+            <li><a href="#">Krissis</a>
+              <ul class="small-drop">
+              <li><a href="brownies.html">Brownies</a> </li>
+              </ul></li>
             <li><a href="#">Jonas</a> 
               <ul class="small-drop">
               <li><a href="Ananascurry.html">Ananascurry</a> </li>
