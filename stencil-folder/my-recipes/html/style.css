@@ -21,6 +21,10 @@ my-footer{
     margin: 0 auto;
     margin-top: 5%;
 }
+recipe-overview{
+    width: auto;
+    padding: 0 5% ;
+}
 
 title-titleimage {
     height: 90vh;
@@ -36,4 +40,17 @@ recipe-page {
 .sidebar{
     width: 20%;
     margin-left: 5%;
+}
+section:first-of-type {
+    margin-top: 5%;
+}
+section {
+    display: flex;
+    width: 98%;
+    margin: 0 auto;
+}
+img {
+    width: 70%;
+    height: auto;
+    object-fit: cover;
 }

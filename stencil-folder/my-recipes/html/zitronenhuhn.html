@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Zitronenhähnchen</title>
+    <script src="../dist/my-recipes.js"></script>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+  <top-nav></top-nav>
+  <div style="display: flex;">
+  <recipe-page
+    title="Zucchinipfanne mit Zitronenhähnchen"
+    image="../src/assets/huhn.jpg"
+    one="Hähnchenbrustfilet abspülen, trocken tupfen und in Streifen schneiden. 1 TL Zitrone abreiben und Zitrone auspressen. Für die Marinade Knoblauch pressen und mit Zitronensaft, -schale und 1/2 TL Salz verrühren. Marinade und Hähnchenbruststreifen in einen Gefrierbeutel geben, gut verkneten und im Kühlschrank ca. 30 Minuten marinieren. Zucchini waschen. Kartoffeln schälen und mit Zucchini würfeln. Oliven in Ringe schneiden."
+    two="Hähnchenbruststreifen abtropfen lassen. Öl in einer Pfanne erhitzen, Hähnchenbruststreifen darin ca. 4–5 Minuten rundherum anbraten, salzen, pfeffern und herausnehmen. Kartoffelwürfel im Bratensatz ca. 1–2 Minuten anbraten, mit Brühe ablöschen und zugedeckt ca. 10–12 Minuten garen. Zucchiniwürfel dazugeben und weitere ca. 5 Minuten garen."
+    three="Olivenringe, Petersilie und Hähnchenbruststreifen unterheben und aufkochen. Zucchinipfanne mit Salz und Pfeffer abschmecken und nach Wunsch mit Zitronenspalten garniert servieren."
+  ></recipe-page>
+
+    <div class="sidebar">
+      <recipe-ingredients multiplicator="2">
+        <sidebar-list-item
+          kind="Hähnchenbrustfilet"
+          unit-value="240"
+          unit="g"
+        ></sidebar-list-item>
+        <sidebar-list-item kind="Zitronen" unit-value="1"></sidebar-list-item>
+        <sidebar-list-item
+          kind="Oliven, schwarz, mariniert"
+          unit-value="1"
+        ></sidebar-list-item>
+        <sidebar-list-item
+          kind="Knoblauch"
+          unit-value="1"
+          unit="Zehe"
+        ></sidebar-list-item>
+        <sidebar-list-item
+          kind="Zucchini mittelgröß"
+          unit-value="2"
+          unit="Stück"
+        ></sidebar-list-item>
+        <sidebar-list-item
+          kind="Kartoffeln"
+          unit-value="400"
+          unit="g"
+        ></sidebar-list-item>
+        <sidebar-list-item
+          kind="Gemüsebrühe"
+          unit-value="250"
+          unit="ml"
+        ></sidebar-list-item>
+        <sidebar-list-item
+          kind="Petersilie"
+        ></sidebar-list-item>
+        <sidebar-list-item
+        kind="Salz, Pfeffer"
+      ></sidebar-list-item>
+
+      </recipe-ingredients>
+    </div>
+  </div>
+
+  <div id="impressions">
+    <image-viewer img-width="300px" img-url="../src/assets/zitrone.jpg">Impressionen</image-viewer>
+    <image-viewer img-url="../src/assets/zitronensaft.jpg"></image-viewer>
+    <image-viewer img-width="300px" img-url="../src/assets/chicken.jpg"></image-viewer>
+   </div>
+  <recipe-ratings>Bewertungen</recipe-ratings>
+  <my-footer></my-footer>
+
+  </body>
+</html>
