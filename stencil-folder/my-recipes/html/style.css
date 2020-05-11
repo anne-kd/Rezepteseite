@@ -54,6 +54,6 @@ img {
     height: auto;
     object-fit: cover;
 }
-img:last-of-type{
-    height: 500px;
+#imglast{
+    height: 400px;
 }
