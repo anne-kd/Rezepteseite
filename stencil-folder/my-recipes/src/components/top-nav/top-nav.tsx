@@ -16,6 +16,7 @@ export class TopNav implements ComponentInterface {
             <li><a href="#">alle Rezepte</a> <ul class="big-drop">
               <li><a href="Ananascurry.html">Ananascurry</a> </li>
               <li><a href="zitronenhuhn.html">Zitronenhühnchen</a> </li>
+              <li><a href="brownies.html">Brownies</a> </li>
             </ul></li>
           </ul>
           <ul class="small">
